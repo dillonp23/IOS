@@ -22,6 +22,13 @@
 		5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */; };
 		5DFB3A67235D8B4C00FC8C3E /* Category+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */; };
 		8D6E1392B0CEDFE6C30F6F26 /* Pods_AnywhereFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */; };
+		929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5888235E45E2001CF389 /* Lato-Medium.ttf */; };
+		929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5889235E45E2001CF389 /* Lato-Black.ttf */; };
+		929E5891235E45E2001CF389 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588A235E45E2001CF389 /* Lato-Bold.ttf */; };
+		929E5892235E45E2001CF389 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588B235E45E2001CF389 /* Lato-MediumItalic.ttf */; };
+		929E5893235E45E2001CF389 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588C235E45E2001CF389 /* Lato-Heavy.ttf */; };
+		929E5894235E45E2001CF389 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588D235E45E2001CF389 /* Lato-Regular.ttf */; };
+		929E5895235E45E2001CF389 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588E235E45E2001CF389 /* Lato-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,13 @@
 		5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitClassRepresentation.swift; sourceTree = "<group>"; };
 		5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Convenience.swift"; sourceTree = "<group>"; };
 		6A1BA65E94CF6EE94C7D206A /* Pods-AnywhereFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.release.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.release.xcconfig"; sourceTree = "<group>"; };
+		929E5888235E45E2001CF389 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		929E5889235E45E2001CF389 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		929E588A235E45E2001CF389 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		929E588B235E45E2001CF389 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		929E588C235E45E2001CF389 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		929E588D235E45E2001CF389 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		929E588E235E45E2001CF389 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		ADE4BA3DBC80B086BFF9FB81 /* Pods-AnywhereFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.debug.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnywhereFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +93,7 @@
 		5D571342235B6E070079CED2 /* AnywhereFitness */ = {
 			isa = PBXGroup;
 			children = (
+				929E5887235E459C001CF389 /* Fonts */,
 				5D571359235D323F0079CED2 /* Model */,
 				5D57135A235D32570079CED2 /* Views */,
 				5D57135B235D32620079CED2 /* Controllers */,
@@ -120,6 +135,20 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		929E5887235E459C001CF389 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				929E5889235E45E2001CF389 /* Lato-Black.ttf */,
+				929E588A235E45E2001CF389 /* Lato-Bold.ttf */,
+				929E588C235E45E2001CF389 /* Lato-Heavy.ttf */,
+				929E5888235E45E2001CF389 /* Lato-Medium.ttf */,
+				929E588B235E45E2001CF389 /* Lato-MediumItalic.ttf */,
+				929E588D235E45E2001CF389 /* Lato-Regular.ttf */,
+				929E588E235E45E2001CF389 /* Lato-Semibold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A7AE7077D4FE5AA48ECA5CDA /* Pods */ = {
@@ -199,9 +228,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929E5891235E45E2001CF389 /* Lato-Bold.ttf in Resources */,
+				929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */,
+				929E5895235E45E2001CF389 /* Lato-Semibold.ttf in Resources */,
 				5D571350235B6E0A0079CED2 /* LaunchScreen.storyboard in Resources */,
 				5D571358235B713F0079CED2 /* GoogleService-Info.plist in Resources */,
 				5D57134D235B6E0A0079CED2 /* Assets.xcassets in Resources */,
+				929E5892235E45E2001CF389 /* Lato-MediumItalic.ttf in Resources */,
+				929E5893235E45E2001CF389 /* Lato-Heavy.ttf in Resources */,
+				929E5894235E45E2001CF389 /* Lato-Regular.ttf in Resources */,
+				929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */,
 				5D57134B235B6E070079CED2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +328,7 @@
 /* Begin XCBuildConfiguration section */
 		5D571352235B6E0A0079CED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE4BA3DBC80B086BFF9FB81 /* Pods-AnywhereFitness.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -352,6 +389,7 @@
 		};
 		5D571353235B6E0A0079CED2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A1BA65E94CF6EE94C7D206A /* Pods-AnywhereFitness.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -412,6 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = AnywhereFitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = AnywhereFitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
