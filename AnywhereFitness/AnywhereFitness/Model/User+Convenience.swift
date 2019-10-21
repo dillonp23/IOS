@@ -41,6 +41,18 @@ extension User {
         self.punchcards = []
     }
     
+    convenience init(representation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(context: context)
+        self.uid = representation.uid
+        self.firstName = representation.firstName
+        self.lastName = representation.lastName
+        self.email = representation.email
+        self.userType = representation.userType
+        self.metro = representation.metro
+        self.registrations = representation.registrations
+        self.punchcards = representation.punchcards
+    }
+    
     var representation: UserRepresentation {
         return UserRepresentation(for: self)
     }
