@@ -12,11 +12,21 @@ class AppHomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var fitClassController = FitClassController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fitClassController.fetchClassesFromServer { (_) in
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
 
@@ -34,13 +44,25 @@ class AppHomeViewController: UIViewController {
 
 extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return fitClassController.fitClassRepresentations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fitnessClassCell", for: indexPath) as? FitnessClassCollectionViewCell else { return UICollectionViewCell() }
         
-        return UICollectionViewCell()
+        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
+        
+        cell.titleLabel.text = fitClass.title
+        cell.categoryLabel.text = fitClass.category
+        cell.intensityLabel.text = fitClass.intensity.capitalized
+        cell.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
+        
+        if let time = Double(fitClass.startTime) {
+            let date = Date(timeIntervalSince1970: time)
+            cell.timeAndDurationLabel.text = "\(date)"
+        }
+        
+        return cell
     }
     
     

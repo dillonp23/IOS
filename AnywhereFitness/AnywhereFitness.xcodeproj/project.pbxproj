@@ -31,6 +31,7 @@
 		929E5895235E45E2001CF389 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588E235E45E2001CF389 /* Lato-Semibold.ttf */; };
 		929E5898235E4BAD001CF389 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E5897235E4BAD001CF389 /* AppHomeViewController.swift */; };
 		929E589B235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */; };
+		929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E589C235E5CE8001CF389 /* FitClassController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		929E588E235E45E2001CF389 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		929E5897235E4BAD001CF389 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassCollectionViewCell.swift; sourceTree = "<group>"; };
+		929E589C235E5CE8001CF389 /* FitClassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FitClassController.swift; path = "AnywhereFitness/Custom Views/FitClassController.swift"; sourceTree = SOURCE_ROOT; };
 		ADE4BA3DBC80B086BFF9FB81 /* Pods-AnywhereFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.debug.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnywhereFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 		5D57135B235D32620079CED2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				929E589C235E5CE8001CF389 /* FitClassController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
+				929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */,
 				5DFB3A61235D7DB400FC8C3E /* FitClass+Convenience.swift in Sources */,
 				929E5898235E4BAD001CF389 /* AppHomeViewController.swift in Sources */,
 				5D571346235B6E070079CED2 /* SceneDelegate.swift in Sources */,

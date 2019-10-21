@@ -76,7 +76,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S3Q-VX-8g6">
                                 <rect key="frame" x="25" y="399.33333333333326" width="389" height="330"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="07y-Jd-IsL"/>
                                 </constraints>
@@ -182,7 +182,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="TJs-d3-O6A" id="Pt2-WZ-ITY"/>
+                                    <outlet property="dataSource" destination="TJs-d3-O6A" id="zxg-Ep-RpF"/>
                                     <outlet property="delegate" destination="TJs-d3-O6A" id="Lun-yT-lFG"/>
                                 </connections>
                             </collectionView>
