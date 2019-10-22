@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct UserRepresentation: Codable {
     var uid: String
     var firstName: String
