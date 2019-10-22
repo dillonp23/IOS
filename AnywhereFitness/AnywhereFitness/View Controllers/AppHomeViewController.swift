@@ -53,14 +53,18 @@ extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
         
         cell.titleLabel.text = fitClass.title
-        cell.categoryLabel.text = fitClass.category
-        cell.intensityLabel.text = fitClass.intensity.capitalized
+        cell.categoryLabel.text = "Class Type: \(fitClass.category)"
+        cell.intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
         cell.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
         
-        if let time = Double(fitClass.startTime) {
-            let date = Date(timeIntervalSince1970: time)
-            cell.timeAndDurationLabel.text = "\(date)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, @ h a"
+        if let timeSince1970 = Double(fitClass.startTime) {
+            let date = Date(timeIntervalSince1970: timeSince1970)
+            cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
         }
+        
+        cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
         
         return cell
     }
