@@ -119,4 +119,28 @@ class UserController {
         }.resume()
     }
     
+    func fetchSomeUsers(uids: [String], completion: @escaping (Error?) -> Void) {
+        // Saves the users requested to the fetchedUsers array and then calls the completion
+        fetchedUsers = []
+        for uid in uids {
+            let requestURL = baseURL.appendingPathComponent("users").appendingPathComponent(uid).appendingPathExtension("json")
+            URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+                if let error = error {
+                    print("Error getting \(uid): \(error)")
+                } else {
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        var rep: UserRepresentation
+                        do {
+                            rep = try decoder.decode(UserRepresentation.self, from: data)
+                        } catch {
+                            print("No data for \(uid)")
+                            return
+                        }
+                        self.fetchedUsers.append(User(representation: rep))
+                    }
+                }
+            }
+        }
+    }
 }
