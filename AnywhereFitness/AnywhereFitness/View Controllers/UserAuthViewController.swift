@@ -88,6 +88,7 @@ class UserAuthViewController: UIViewController {
                 print("A message about password mismatch should go here")
                 return
             }
+            
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 if let error = error {
                     print("error creating user in Firebase: \(error)")
@@ -103,9 +104,32 @@ class UserAuthViewController: UIViewController {
                 UserController.shared.createUser(uid: authResult.user.uid, firstName: firstName, lastName: lastName, email: email, userType: userType, metro: metro)
                 UserController.shared.login()
             }
-                
+            dismiss(animated: true, completion: nil)
         } else {    // Sign In
+            guard let email = txtEmail.text, !email.isEmpty, let password = txtPassword.text, !password.isEmpty else {
+                // should never get here bc button should be disabled
+                return
+            }
             
+            Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+                if let error = error {
+                    print("Error signing into Firebase: \(error)")
+                    return
+                }
+                guard let authResult = authResult else {
+                    print("No authResult")
+                    return
+                }
+                print("User signed in: \(authResult.user)")
+                UserController.shared.fetchOneUser(uid: authResult.user.uid) { (error) in
+                    if let error = error {
+                        print("User signed in but could not be fetched: \(error)")
+                        return
+                    }
+                    UserController.shared.login()
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
     
