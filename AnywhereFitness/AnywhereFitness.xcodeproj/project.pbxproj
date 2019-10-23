@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1AC103235EAA23000B85E0 /* UserController.swift */; };
+		5D1AC106235FE270000B85E0 /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1AC105235FE270000B85E0 /* UserAuth.storyboard */; };
+		5D1AC108235FE6BC000B85E0 /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1AC107235FE6BC000B85E0 /* UserAuthViewController.swift */; };
 		5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D54F771235D8C9100EFF1A8 /* CategoryRepresentation.swift */; };
 		5D571344235B6E070079CED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D571343235B6E070079CED2 /* AppDelegate.swift */; };
 		5D571346235B6E070079CED2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D571345235B6E070079CED2 /* SceneDelegate.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		5D1AC103235EAA23000B85E0 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = AnywhereFitness/Model/UserController.swift; sourceTree = SOURCE_ROOT; };
+		5D1AC105235FE270000B85E0 /* UserAuth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserAuth.storyboard; sourceTree = "<group>"; };
+		5D1AC107235FE6BC000B85E0 /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		5D54F771235D8C9100EFF1A8 /* CategoryRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepresentation.swift; sourceTree = "<group>"; };
 		5D571340235B6E070079CED2 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D571343235B6E070079CED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				5D571349235B6E070079CED2 /* Main.storyboard */,
 				5D57134E235B6E0A0079CED2 /* LaunchScreen.storyboard */,
+				5D1AC105235FE270000B85E0 /* UserAuth.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				929E5897235E4BAD001CF389 /* AppHomeViewController.swift */,
+				5D1AC107235FE6BC000B85E0 /* UserAuthViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				5D571358235B713F0079CED2 /* GoogleService-Info.plist in Resources */,
 				5D57134D235B6E0A0079CED2 /* Assets.xcassets in Resources */,
 				929E5892235E45E2001CF389 /* Lato-MediumItalic.ttf in Resources */,
+				5D1AC106235FE270000B85E0 /* UserAuth.storyboard in Resources */,
 				929E5893235E45E2001CF389 /* Lato-Heavy.ttf in Resources */,
 				929E5894235E45E2001CF389 /* Lato-Regular.ttf in Resources */,
 				929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */,
@@ -328,6 +335,7 @@
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
 				929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */,
 				5DFB3A61235D7DB400FC8C3E /* FitClass+Convenience.swift in Sources */,
+				5D1AC108235FE6BC000B85E0 /* UserAuthViewController.swift in Sources */,
 				929E5898235E4BAD001CF389 /* AppHomeViewController.swift in Sources */,
 				5D571346235B6E070079CED2 /* SceneDelegate.swift in Sources */,
 				5DC71621235D76B600EC033C /* CoreDataStack.swift in Sources */,
