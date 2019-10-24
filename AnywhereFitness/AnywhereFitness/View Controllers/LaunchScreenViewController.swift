@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class LaunchScreenViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+   private func checkLoggedInUserStatus() {
+       //checking for current user
+       //if no current user present welcome navigation controlller
+        if UserController.shared.loggedInUser == nil {
+           DispatchQueue.main.async {
+               let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
+               let vc = storyboard.instantiateViewController(withIdentifier: "UserAuthStoryboard")
+               self.present(vc, animated: false, completion: nil)
+           }
+        } else {
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomepageStoryboard")
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
+   }
+   
+   override func viewDidLoad() {
+       super.viewDidLoad()
+       checkLoggedInUserStatus()
+   }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        perform(#selector(LaunchScreenViewController.showmHomePage), with: nil, afterDelay: 1)
     }
-    */
+   
+   
+   // go to home screen of app
+   @objc func showmHomePage(){
+       // after delay shows home
+       performSegue(withIdentifier: "ShowHomePageSegue", sender: self)
+   }
 
 }
