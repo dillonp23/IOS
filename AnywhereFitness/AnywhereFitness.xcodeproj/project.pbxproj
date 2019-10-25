@@ -25,6 +25,7 @@
 		8D6E1392B0CEDFE6C30F6F26 /* Pods_AnywhereFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */; };
 		922A745F236351CE00248A3E /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922A745E236351CE00248A3E /* UserAuth.storyboard */; };
 		922A74612363529C00248A3E /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74602363529C00248A3E /* LaunchScreenViewController.swift */; };
+		922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74622363552C00248A3E /* UserAuthViewController.swift */; };
 		929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5888235E45E2001CF389 /* Lato-Medium.ttf */; };
 		929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5889235E45E2001CF389 /* Lato-Black.ttf */; };
 		929E5891235E45E2001CF389 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588A235E45E2001CF389 /* Lato-Bold.ttf */; };
@@ -59,6 +60,7 @@
 		6A1BA65E94CF6EE94C7D206A /* Pods-AnywhereFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.release.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.release.xcconfig"; sourceTree = "<group>"; };
 		922A745E236351CE00248A3E /* UserAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuth.storyboard; sourceTree = "<group>"; };
 		922A74602363529C00248A3E /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		922A74622363552C00248A3E /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		929E5888235E45E2001CF389 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		929E5889235E45E2001CF389 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		929E588A235E45E2001CF389 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				929E5897235E4BAD001CF389 /* AppHomeViewController.swift */,
 				92D1BFE02361389700CC5155 /* SearchViewController.swift */,
 				922A74602363529C00248A3E /* LaunchScreenViewController.swift */,
+				922A74622363552C00248A3E /* UserAuthViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				5D571344235B6E070079CED2 /* AppDelegate.swift in Sources */,
 				5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */,
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
+				922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */,
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
