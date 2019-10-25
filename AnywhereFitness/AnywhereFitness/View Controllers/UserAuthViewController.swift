@@ -28,41 +28,23 @@ class UserAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        segSignUpIn.translatesAutoresizingMaskIntoConstraints = false
-        stackSignIn.translatesAutoresizingMaskIntoConstraints = false
-        stackSignUp.translatesAutoresizingMaskIntoConstraints = false
-        txtEmail.translatesAutoresizingMaskIntoConstraints = false
-        txtPassword.translatesAutoresizingMaskIntoConstraints = false
-        txtConfirmPassword.translatesAutoresizingMaskIntoConstraints = false
-        txtFirstName.translatesAutoresizingMaskIntoConstraints = false
-        txtLastName.translatesAutoresizingMaskIntoConstraints = false
-        switchInstructor.translatesAutoresizingMaskIntoConstraints = false
-
-        let constraints = [segSignUpIn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                           segSignUpIn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                           segSignUpIn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                           stackSignIn.topAnchor.constraint(equalTo: segSignUpIn.bottomAnchor, constant: 20),
-                           stackSignIn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                           stackSignIn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-                           stackSignUp.topAnchor.constraint(equalTo: stackSignIn.bottomAnchor, constant: 10),
-                           stackSignUp.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                           stackSignUp.widthAnchor.constraint(equalTo: stackSignIn.widthAnchor),
-                           btnSignUpIn.topAnchor.constraint(equalTo: stackSignUp.bottomAnchor, constant: 20),
-                           btnSignUpIn.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
-
-        btnSignUpIn.isEnabled = true
+        if let registerImage = UIImage(named: "registerBtn") {
+            btnSignUpIn.setBackgroundImage(registerImage, for: .normal)
+        }
     }
     
 
     private func updateViews() {
         if segSignUpIn.selectedSegmentIndex == 0 { // Sign Up
             stackSignUp.isHidden = false
-            btnSignUpIn.setTitle("Sign Up", for: .normal)
+            if let registerImage = UIImage(named: "registerBtn") {
+                btnSignUpIn.setBackgroundImage(registerImage, for: .normal)
+            }
         } else {
             stackSignUp.isHidden = true
-            btnSignUpIn.setTitle("Sign In", for: .normal)
+            if let signInImage = UIImage(named: "signInBtn") {
+                btnSignUpIn.setBackgroundImage(signInImage, for: .normal)
+            }
         }
     }
     
@@ -85,7 +67,7 @@ class UserAuthViewController: UIViewController {
                 print("A message about password mismatch should go here")
                 return
             }
-            
+
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 if let error = error {
                     print("error creating user in Firebase: \(error)")
@@ -104,13 +86,13 @@ class UserAuthViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             }
-            
+
         } else {    // Sign In
             guard let email = txtEmail.text, !email.isEmpty, let password = txtPassword.text, !password.isEmpty else {
                 // should never get here bc button should be disabled
                 return
             }
-            
+
             Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
                 if let error = error {
                     print("Error signing into Firebase: \(error)")
@@ -153,6 +135,7 @@ extension UserAuthViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return metros[component]
     }
+    
 }
 
 extension UserAuthViewController: UITextFieldDelegate {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
 
 class AppHomeViewController: UIViewController {
     
@@ -21,7 +23,8 @@ class AppHomeViewController: UIViewController {
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "UserAuthStoryboard")
-                self.present(vc, animated: false, completion: nil)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }
