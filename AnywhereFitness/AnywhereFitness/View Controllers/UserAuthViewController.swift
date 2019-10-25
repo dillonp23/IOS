@@ -37,7 +37,7 @@ class UserAuthViewController: UIViewController {
         txtFirstName.translatesAutoresizingMaskIntoConstraints = false
         txtLastName.translatesAutoresizingMaskIntoConstraints = false
         switchInstructor.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let constraints = [segSignUpIn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                            segSignUpIn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                            segSignUpIn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
@@ -51,9 +51,7 @@ class UserAuthViewController: UIViewController {
                            btnSignUpIn.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
-        
-        pkrMetro.dataSource = self
-        
+
         btnSignUpIn.isEnabled = true
     }
     
