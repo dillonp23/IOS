@@ -54,7 +54,7 @@ class UserAuthViewController: UIViewController {
         
         pkrMetro.dataSource = self
         
-        btnSignUpIn.isEnabled = false
+        btnSignUpIn.isEnabled = true
     }
     
 
@@ -102,8 +102,11 @@ class UserAuthViewController: UIViewController {
                 let metro = self.metros[self.pkrMetro.selectedRow(inComponent: 0)]
                 UserController.shared.createUser(uid: authResult.user.uid, firstName: firstName, lastName: lastName, email: email, userType: userType, metro: metro)
                 UserController.shared.login()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
-            dismiss(animated: true, completion: nil)
+            
         } else {    // Sign In
             guard let email = txtEmail.text, !email.isEmpty, let password = txtPassword.text, !password.isEmpty else {
                 // should never get here bc button should be disabled
@@ -126,7 +129,9 @@ class UserAuthViewController: UIViewController {
                         return
                     }
                     UserController.shared.login()
-                    self.dismiss(animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         }
@@ -140,11 +145,11 @@ extension UserAuthViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     // This implementation should be updated to be dynamic
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return metros.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return metros.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

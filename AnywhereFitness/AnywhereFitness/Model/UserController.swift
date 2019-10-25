@@ -5,7 +5,6 @@
 //  Created by Joel Groomer on 10/21/19.
 //  Copyright © 2019 Julltron. All rights reserved.
 //
-
 import Foundation
 import CoreData
 
@@ -34,9 +33,18 @@ class UserController {
             }
         }
         put(user: user)
+        fetchedUser = user
     }
     
-    
+    func login(_ user: User? = nil) {
+        // logs in the last fetchedUser if no user is specified
+        
+        if let user = user {
+            loggedInUser = user
+        } else {
+            loggedInUser = fetchedUser
+        }
+    }
     
     // MARK: - Server methods
     

@@ -13,9 +13,22 @@ class AppHomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var fitClassController = FitClassController()
+    
+    private func checkLoggedInUserStatus() {
+        //checking for current user
+        //if no current user present welcome navigation controlller
+        if UserController.shared.loggedInUser == nil {
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "UserAuthStoryboard")
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLoggedInUserStatus()
         fitClassController.fetchClassesFromServer { (_) in
             
             DispatchQueue.main.async {

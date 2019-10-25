@@ -106,6 +106,10 @@
                                     </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-QF-rP1">
                                         <rect key="frame" x="0.0" y="139" width="320" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="aq5-V4-6Ml" id="qgc-ye-gxs"/>
+                                            <outlet property="delegate" destination="aq5-V4-6Ml" id="NpK-Q1-Zga"/>
+                                        </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qFE-SX-F0q">
                                         <rect key="frame" x="0.0" y="365" width="320" height="31"/>
