@@ -25,6 +25,7 @@
 		5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */; };
 		5DFB3A67235D8B4C00FC8C3E /* Category+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */; };
 		8D6E1392B0CEDFE6C30F6F26 /* Pods_AnywhereFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */; };
+		928595F22362840F0033C574 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928595F12362840F0033C574 /* SearchCollectionViewCell.swift */; };
 		92027CEA23614C8700E14A62 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92027CE923614C8700E14A62 /* LaunchScreenViewController.swift */; };
 		929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5888235E45E2001CF389 /* Lato-Medium.ttf */; };
 		929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5889235E45E2001CF389 /* Lato-Black.ttf */; };
@@ -36,6 +37,7 @@
 		929E5898235E4BAD001CF389 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E5897235E4BAD001CF389 /* AppHomeViewController.swift */; };
 		929E589B235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */; };
 		929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E589C235E5CE8001CF389 /* FitClassController.swift */; };
+		92D1BFE12361389700CC5155 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1BFE02361389700CC5155 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitClassRepresentation.swift; sourceTree = "<group>"; };
 		5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Convenience.swift"; sourceTree = "<group>"; };
 		6A1BA65E94CF6EE94C7D206A /* Pods-AnywhereFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.release.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.release.xcconfig"; sourceTree = "<group>"; };
+		928595F12362840F0033C574 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		92027CE923614C8700E14A62 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		929E5888235E45E2001CF389 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		929E5889235E45E2001CF389 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		929E5897235E4BAD001CF389 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		929E589C235E5CE8001CF389 /* FitClassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FitClassController.swift; path = "AnywhereFitness/Custom Views/FitClassController.swift"; sourceTree = SOURCE_ROOT; };
+		92D1BFE02361389700CC5155 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ADE4BA3DBC80B086BFF9FB81 /* Pods-AnywhereFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.debug.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnywhereFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				929E5897235E4BAD001CF389 /* AppHomeViewController.swift */,
+				92D1BFE02361389700CC5155 /* SearchViewController.swift */,
 				5D1AC107235FE6BC000B85E0 /* UserAuthViewController.swift */,
 				92027CE923614C8700E14A62 /* LaunchScreenViewController.swift */,
 			);
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */,
+				928595F12362840F0033C574 /* SearchCollectionViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -329,11 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D1BFE12361389700CC5155 /* SearchViewController.swift in Sources */,
 				929E589B235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift in Sources */,
 				5D571344235B6E070079CED2 /* AppDelegate.swift in Sources */,
 				5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */,
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
+				928595F22362840F0033C574 /* SearchCollectionViewCell.swift in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
 				929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */,
