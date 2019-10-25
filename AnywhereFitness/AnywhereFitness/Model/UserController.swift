@@ -34,9 +34,18 @@ class UserController {
             }
         }
         put(user: user)
+        fetchedUser = user
     }
     
-    
+    func login(_ user: User? = nil) {
+        // logs in the last fetchedUser if no user is specified
+        
+        if let user = user {
+            loggedInUser = user
+        } else {
+            loggedInUser = fetchedUser
+        }
+    }
     
     // MARK: - Server methods
     
