@@ -53,6 +53,7 @@ class UserAuthViewController: UIViewController {
     }
     
     @IBAction func doAuth(_ sender: Any) {
+        
         if segSignUpIn.selectedSegmentIndex == 0 {  // Sign Up
             guard let email = txtEmail.text, !email.isEmpty,
                 let password = txtPassword.text, !password.isEmpty,
@@ -83,9 +84,12 @@ class UserAuthViewController: UIViewController {
                 UserController.shared.createUser(uid: authResult.user.uid, firstName: firstName, lastName: lastName, email: email, userType: userType, metro: metro)
                 UserController.shared.login()
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    }
                 }
-            }
 
         } else {    // Sign In
             guard let email = txtEmail.text, !email.isEmpty, let password = txtPassword.text, !password.isEmpty else {
@@ -110,8 +114,12 @@ class UserAuthViewController: UIViewController {
                     }
                     UserController.shared.login()
                     DispatchQueue.main.async {
-                        self.dismiss(animated: true, completion: nil)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
                     }
+                    
                 }
             }
         }

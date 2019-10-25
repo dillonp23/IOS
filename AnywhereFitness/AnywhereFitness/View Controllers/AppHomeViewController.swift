@@ -13,6 +13,9 @@ import Firebase
 class AppHomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
+    
     
     var fitClassController = FitClassController()
     
@@ -31,6 +34,7 @@ class AppHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateViews()
         checkLoggedInUserStatus()
         fitClassController.fetchClassesFromServer { (_) in
             
@@ -43,18 +47,30 @@ class AppHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.updateViews()
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let searchVC = segue.destination as? SearchViewController else { return }
+        if let searchString = searchTextField.text, !searchString.isEmpty {
+            searchVC.searchTerm = searchString
+        }
     }
-    */
+    
+    func updateViews() {
+        if UserController.shared.loggedInUser != nil {
+            greetingLabel.text = "Hi, \(UserController.shared.loggedInUser?.firstName ?? "")!"
+        } else {
+            greetingLabel.text = "Welcome"
+        }
+    }
 
 }
 

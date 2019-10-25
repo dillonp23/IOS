@@ -12,11 +12,13 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchClassesTextField: UITextField!
     
+    var searchTerm: String?
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.updateViews()
         // Do any additional setup after loading the view.
     }
     
@@ -35,4 +37,10 @@ class SearchViewController: UIViewController {
     }
     
 
+    func updateViews() {
+        if let searchTerm = searchTerm {
+            searchClassesTextField.text = searchTerm
+        }
+    }
+    
 }
