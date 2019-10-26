@@ -18,13 +18,13 @@ struct FitClassRepresentation: Codable {
     var intensity: String
     var metro: String
     var addr1: String
-//    var addr2: String?
+    var addr2: String?
     var city: String
     var state: String
     var zip: String
     var price: Double
-//    var maxRegistrants: Int
-//    var registrants: [String]?
+    var maxRegistrants: Int?
+    var registrants: [String]?
     var offerPunchcard: Bool
     
     init(for fitClass: FitClass) {
@@ -37,13 +37,13 @@ struct FitClassRepresentation: Codable {
         intensity = fitClass.intensity ?? ""
         metro = fitClass.metro ?? ""
         addr1 = fitClass.addr1 ?? ""
-//        addr2 = fitClass.addr2 ?? ""
+        addr2 = fitClass.addr2 ?? ""
         city = fitClass.city ?? ""
         state = fitClass.state ?? ""
         zip = fitClass.zip ?? ""
         price = fitClass.price
-//        maxRegistrants = Int(fitClass.maxRegistrants)
-//        registrants = fitClass.registrants
+        maxRegistrants = Int(fitClass.maxRegistrants)
+        registrants = fitClass.registrants
         offerPunchcard = fitClass.offerPunchcard
     }
 }
