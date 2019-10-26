@@ -141,7 +141,7 @@ extension UserAuthViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return metros[component]
+        return metros[row]
     }
     
 }
