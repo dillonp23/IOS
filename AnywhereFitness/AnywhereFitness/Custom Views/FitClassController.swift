@@ -8,12 +8,20 @@
 
 import Foundation
 import CoreData
+import UIKit
+import Firebase
 
 class FitClassController {
     
     private let baseURL = URL(string: "https://lambda-anywhere-fitness.firebaseio.com/")!
     
     var fitClassRepresentations: [FitClassRepresentation] = []
+    
+    func searchClasses(completion: @escaping (Error?) -> Void = { _ in }) {
+        
+        
+    }
+    
     
     func fetchClassesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
         
