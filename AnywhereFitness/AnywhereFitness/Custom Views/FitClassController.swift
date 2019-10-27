@@ -65,7 +65,45 @@ class FitClassController {
         
     }
     
+    // MARK: - Search functionality
     
+    func classRepsFor(metro: String) -> [FitClassRepresentation] {
+        // returns all classes occurring in the future that have a matching metro
+        
+        return fitClassRepresentations.filter { (rep) -> Bool in
+            guard let timestamp = Double(rep.startTime) else { return false }
+            if rep.metro == metro && Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
+                return true
+            }
+            return false
+        }
+    }
     
+    func classRepsFor(category: String, metro: String) -> [FitClassRepresentation] {
+        // returns all classes occurring in the future that have a matching category and metro
+        
+        return fitClassRepresentations.filter { (rep) -> Bool in
+            guard let timestamp = Double(rep.startTime) else { return false }
+            if rep.metro == metro && rep.category == category && Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
+                return true
+            }
+            return false
+        }
+    }
     
+    func classRepsFor(client: User, includePastClasses: Bool = false) -> [FitClassRepresentation] {
+        // returns all classes that list the user as a registrant
+        guard let uid = client.uid else { return [] }
+        
+        return fitClassRepresentations.filter { (rep) -> Bool in
+            guard let timestamp = Double(rep.startTime), let registrants = rep.registrants else { return false }
+            
+            if registrants.contains(uid) {
+                if includePastClasses || Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
+                    return true
+                }
+            }
+            return false
+        }
+    }
 }

@@ -42,6 +42,55 @@ struct CategoryRepresentation: Codable {
 let baseURL = URL(string: "https://lambda-anywhere-fitness.firebaseio.com")!
 let type = "categories"
 
+let getRequestURL = baseURL.appendingPathComponent("classes").appendingPathExtension("json")
+var allOfThemDic: [String : FitClassRepresentation] = [:]
+var allOfThemRep: [FitClassRepresentation] = []
+URLSession.shared.dataTask(with: getRequestURL) { (data, res, error) in
+    if let error = error {
+        print("Error fetching: \(error)")
+        return
+    }
+    
+    guard let data = data else {
+        print("No data")
+        return
+    }
+    
+    let decoder = JSONDecoder()
+    do {
+        allOfThemDic = try decoder.decode([String : FitClassRepresentation].self, from: data)
+    } catch {
+        print("Error decoding: \(error)")
+        return
+    }
+    
+    for rep in allOfThemDic.values {
+        if rep.category == "Marial Arts" {
+            let updateURL = baseURL.appendingPathComponent("classes").appendingPathComponent(rep.classID).appendingPathExtension("json")
+            var request = URLRequest(url: updateURL)
+            request.httpMethod = "PUT"
+            var newRep = rep
+            newRep.category = "Martial Arts"
+            let encoder = JSONEncoder()
+            do {
+                request.httpBody = try encoder.encode(newRep)
+            } catch {
+                print("\(rep.classID) failed to encode")
+                continue
+            }
+            URLSession.shared.dataTask(with: request) { (_, _, error) in
+                if let error = error {
+                    print("\(rep.classID) failed: \(error)")
+                    return
+                }
+                print("\(rep.classID) updated.")
+            }.resume()
+        }
+    }
+}.resume()
+
+
+/*
 func get(oldID: Int) {
     let idString = String(oldID)
     let requestURL = baseURL.appendingPathComponent(type).appendingPathComponent(idString).appendingPathExtension("json")
@@ -67,7 +116,6 @@ func get(oldID: Int) {
         }
         
         put(oldID: oldID, rep: rep)
-//        delete(oldID: oldID)
         print("Got \(idString)")
     }.resume()
 }
@@ -114,3 +162,4 @@ func delete(oldID: Int) {
 for i in 0...5 {
     get(oldID: i)
 }
+*/
