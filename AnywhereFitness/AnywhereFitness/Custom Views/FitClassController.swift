@@ -26,10 +26,10 @@ class FitClassController {
         return classRepsFor(metro: metro)
     }
     
-    func searchClasses(completion: @escaping (Error?) -> Void = { _ in }) {
-        
-        
-    }
+//    func searchClasses(completion: @escaping (Error?) -> Void = { _ in }) {
+//        
+//        
+//    }
     
     
     func fetchClassesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
@@ -117,6 +117,11 @@ class FitClassController {
         }
     }
     
+    func updateRepresentation(with rep: FitClassRepresentation) {
+        guard let i = fitClassRepresentations.firstIndex(where: { $0.classID == rep.classID }) else { return }
+        fitClassRepresentations[i] = rep
+    }
+    
     
     // MARK: - Create/Update/Register/Cancel
     
@@ -151,6 +156,7 @@ class FitClassController {
         let encoder = JSONEncoder()
         do {
             request.httpBody = try encoder.encode(updatedRep)
+            
         } catch {
             print("Unable to encode rep when registering for class: \(error)")
             completion(false)
@@ -163,7 +169,6 @@ class FitClassController {
                 completion(false)
                 return
             }
-            print(res ?? "No response")
             completion(true)
         }.resume()
     }
@@ -204,6 +209,7 @@ class FitClassController {
                 return
             }
             print(res ?? "No response")
+            self.updateRepresentation(with: updatedRep)
             completion(true)
         }.resume()
     }
