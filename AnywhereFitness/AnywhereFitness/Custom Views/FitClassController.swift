@@ -68,6 +68,7 @@ class FitClassController {
                 completion(nil)
             } catch {
                 print("Error decoding fitness class data: \(error)")
+                completion(error)
             }
             
         }.resume()
