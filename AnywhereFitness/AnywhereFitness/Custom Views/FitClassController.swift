@@ -16,6 +16,15 @@ class FitClassController {
     private let baseURL = URL(string: "https://lambda-anywhere-fitness.firebaseio.com/")!
     
     var fitClassRepresentations: [FitClassRepresentation] = []
+    var fitClassRepsForUserMetro: [FitClassRepresentation] {
+        guard let user = UserController.shared.loggedInUser,
+            let metro = user.metro, !metro.isEmpty
+        else {
+            // if the user isn't logged in, return everything
+            return fitClassRepresentations
+        }
+        return classRepsFor(metro: metro)
+    }
     
     func searchClasses(completion: @escaping (Error?) -> Void = { _ in }) {
         
