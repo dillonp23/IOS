@@ -163,10 +163,22 @@ and cancel if needed</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se4-tr-Smz">
+                                <rect key="frame" x="358" y="44" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Jeg-5D-2dx"/>
+                                    <constraint firstAttribute="height" constant="25" id="LS6-Xb-DG8"/>
+                                </constraints>
+                                <state key="normal" image="plusIcon"/>
+                                <connections>
+                                    <segue destination="vcA-KP-vi5" kind="show" identifier="AddNewClassSegue" id="A0t-S0-igP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="D67-4Y-yKW" firstAttribute="trailing" secondItem="eLe-Pc-MHC" secondAttribute="trailing" id="2HE-H6-OxF"/>
+                            <constraint firstItem="Se4-tr-Smz" firstAttribute="top" secondItem="eLe-Pc-MHC" secondAttribute="top" id="2cC-fh-NVo"/>
                             <constraint firstItem="xgO-Kw-wAj" firstAttribute="top" secondItem="eLe-Pc-MHC" secondAttribute="top" constant="50" id="3uv-3C-wBu"/>
                             <constraint firstItem="bxv-BN-R1V" firstAttribute="centerX" secondItem="Rav-0Z-3fC" secondAttribute="centerX" id="45Y-jU-WXm"/>
                             <constraint firstItem="yJo-ab-SyB" firstAttribute="top" secondItem="Rav-0Z-3fC" secondAttribute="top" id="4Mg-Er-iXg"/>
@@ -184,6 +196,7 @@ and cancel if needed</string>
                             <constraint firstItem="yJo-ab-SyB" firstAttribute="trailing" secondItem="eLe-Pc-MHC" secondAttribute="trailing" id="s5t-fz-qKo"/>
                             <constraint firstItem="y0Z-gh-Uzl" firstAttribute="top" secondItem="yJo-ab-SyB" secondAttribute="bottom" constant="56" id="tMo-HO-u04"/>
                             <constraint firstItem="D67-4Y-yKW" firstAttribute="top" secondItem="Rav-0Z-3fC" secondAttribute="top" id="tWd-Yg-fys"/>
+                            <constraint firstItem="Se4-tr-Smz" firstAttribute="leading" secondItem="eLe-Pc-MHC" secondAttribute="leading" constant="358" id="xPx-TK-nFA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLe-Pc-MHC"/>
                     </view>
@@ -198,11 +211,11 @@ and cancel if needed</string>
             <objects>
                 <viewController id="vcA-KP-vi5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXh-hZ-4UM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="UWd-ga-zb5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -214,6 +227,7 @@ and cancel if needed</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QE6-d0-QgP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1vo-1w-bSF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4J-Ar-dIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -627,6 +641,7 @@ active today? Search below.</string>
         <image name="classesBtn" width="50.333332061767578" height="25"/>
         <image name="header" width="414" height="222"/>
         <image name="homeBtn" width="32.333332061767578" height="29.666666030883789"/>
+        <image name="plusIcon" width="25" height="25"/>
         <image name="searchBar" width="322" height="73"/>
         <image name="searchBtn" width="43" height="41"/>
         <image name="user-header" width="414" height="222"/>
