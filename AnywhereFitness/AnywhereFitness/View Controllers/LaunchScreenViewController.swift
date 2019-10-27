@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+
+// *** THIS FILE IS NOT CURRENTLY IN USE ***
+
 class LaunchScreenViewController: UIViewController {
 
     private func checkLoggedInUserStatus() {

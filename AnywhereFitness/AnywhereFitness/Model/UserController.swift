@@ -36,6 +36,32 @@ class UserController {
         fetchedUser = user
     }
     
+    func checkPreviousSignIn(completion: @escaping (Bool) -> Void) {
+        // checks for a previous sign in. If one (and only one) exists,
+        // sets that user to the loggedInUser and returns true to completion.
+        // Otherwise, returns false
+        
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        let context = CoreDataStack.shared.mainContext
+        context.perform {
+            do {
+                let existingUsers = try context.fetch(fetchRequest)
+                if existingUsers.count != 1 {
+                    completion(false)
+                    return
+                }
+                for entry in existingUsers {
+                    self.loggedInUser = entry
+                    print("Signed in: \(entry)")
+                    completion(true)
+                }
+            } catch {
+                completion(false)
+                return
+            }
+        }
+    }
+    
     func login(_ user: User? = nil) {
         // logs in the last fetchedUser if no user is specified
         

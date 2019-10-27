@@ -22,32 +22,35 @@ class AppHomeViewController: UIViewController {
     private func checkLoggedInUserStatus() {
         //checking for current user
         //if no current user present welcome navigation controlller
-        if UserController.shared.loggedInUser == nil {
-            DispatchQueue.main.async {
-                let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "UserAuthStoryboard")
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+        
+        UserController.shared.checkPreviousSignIn() { _ in
+            if UserController.shared.loggedInUser == nil {
+                DispatchQueue.main.async {
+                    let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "UserAuthStoryboard")
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateViews()
         checkLoggedInUserStatus()
         fitClassController.fetchClassesFromServer { (_) in
-            
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.updateViews()
             }
-            
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateViews()
+        DispatchQueue.main.async {
+            self.updateViews()
+        }
     }
     
 
