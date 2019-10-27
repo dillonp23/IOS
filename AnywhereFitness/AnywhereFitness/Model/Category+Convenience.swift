@@ -17,6 +17,13 @@ extension Category {
         self.desc = desc
     }
     
+    convenience init(from representation: CategoryRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(context: context)
+        self.uuid = UUID(uuidString: representation.uuid)
+        self.name = representation.name
+        self.desc = representation.desc
+    }
+    
     var representation: CategoryRepresentation {
         return CategoryRepresentation(for: self)
     }
