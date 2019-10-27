@@ -87,7 +87,7 @@ class UserAuthViewController: UIViewController {
                     let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Onboarding1")
                     vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: false, completion: nil)
+                    self.present(vc, animated: true, completion: nil)
                     }
                 }
 

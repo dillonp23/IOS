@@ -32,6 +32,10 @@ class ThirdOBViewController: UIViewController {
     
     
     @IBAction func getStartedTapped(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
     }
     
 }

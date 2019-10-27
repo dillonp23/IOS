@@ -34,7 +34,8 @@ class SecondOBViewController: UIViewController {
         let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Onboarding3")
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: nil)
+        vc.modalTransitionStyle = .partialCurl
+        self.present(vc, animated: true, completion: nil)
     }
     
 
