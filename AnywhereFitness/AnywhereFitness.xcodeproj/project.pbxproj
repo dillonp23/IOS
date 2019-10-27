@@ -16,6 +16,7 @@
 		5D571350235B6E0A0079CED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D57134E235B6E0A0079CED2 /* LaunchScreen.storyboard */; };
 		5D571358235B713F0079CED2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D571357235B713F0079CED2 /* GoogleService-Info.plist */; };
 		5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D57135C235D342E0079CED2 /* AnywhereFitness.xcdatamodeld */; };
+		5D7B2FC6236553540079125F /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7B2FC5236553540079125F /* CategoryController.swift */; };
 		5DC71621235D76B600EC033C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71620235D76B600EC033C /* CoreDataStack.swift */; };
 		5DC71623235D772700EC033C /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71622235D772700EC033C /* User+Convenience.swift */; };
 		5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71624235D78D400EC033C /* UserRepresentation.swift */; };
@@ -52,6 +53,7 @@
 		5D571351235B6E0A0079CED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D571357235B713F0079CED2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D57135D235D342E0079CED2 /* AnywhereFitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnywhereFitness.xcdatamodel; sourceTree = "<group>"; };
+		5D7B2FC5236553540079125F /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryController.swift; path = AnywhereFitness/Model/CategoryController.swift; sourceTree = SOURCE_ROOT; };
 		5DC71620235D76B600EC033C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5DC71622235D772700EC033C /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		5DC71624235D78D400EC033C /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				929E589C235E5CE8001CF389 /* FitClassController.swift */,
 				5D1AC103235EAA23000B85E0 /* UserController.swift */,
+				5D7B2FC5236553540079125F /* CategoryController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				92D1BFE12361389700CC5155 /* SearchViewController.swift in Sources */,
 				929E589B235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift in Sources */,
 				5D571344235B6E070079CED2 /* AppDelegate.swift in Sources */,
+				5D7B2FC6236553540079125F /* CategoryController.swift in Sources */,
 				5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */,
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
 				922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */,
