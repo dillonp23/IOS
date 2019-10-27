@@ -11,15 +11,21 @@ import UIKit
 class ThirdOBViewController: UIViewController {
     
     @IBOutlet weak var cancelBtnImage: UIImageView!
+    @IBOutlet weak var getStartedButton: UIButton!
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cancelBtnImage.pulsate()
+    }
     /*
     // MARK: - Navigation
 

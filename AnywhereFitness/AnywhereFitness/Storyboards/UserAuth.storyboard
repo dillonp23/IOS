@@ -254,6 +254,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l6N-s8-NV2"/>
                     <connections>
+                        <outlet property="nextButton" destination="SEB-ze-uod" id="IuV-Hi-TKC"/>
                         <outlet property="searchBarImage" destination="u2X-65-jfH" id="xN4-Cn-XXX"/>
                     </connections>
                 </viewController>
@@ -302,6 +303,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wUF-ZK-oRa"/>
                     <connections>
+                        <outlet property="nextButton" destination="DiA-r7-QeO" id="PVV-wv-8Yh"/>
                         <outlet property="signUpImage" destination="hi9-Aq-H4M" id="ys6-Jc-KK2"/>
                     </connections>
                 </viewController>
@@ -351,6 +353,7 @@
                     <navigationItem key="navigationItem" id="Qrf-9c-yOx"/>
                     <connections>
                         <outlet property="cancelBtnImage" destination="vsi-4A-fuC" id="zdP-Ad-mXE"/>
+                        <outlet property="getStartedButton" destination="y1M-No-dnC" id="2Hm-I4-XVm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLw-MD-rqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,15 +11,21 @@ import UIKit
 class SecondOBViewController: UIViewController {
     
     @IBOutlet weak var signUpImage: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        signUpImage.pulsate()
+    }
     /*
     // MARK: - Navigation
 
@@ -40,3 +46,5 @@ class SecondOBViewController: UIViewController {
     
 
 }
+
+
