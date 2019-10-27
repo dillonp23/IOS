@@ -82,8 +82,8 @@
                                     <segue destination="uwq-Od-CgE" kind="showDetail" id="SD5-Cd-Wu2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-wk-usQ">
-                                <rect key="frame" x="25" y="337" width="125" height="38.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-wk-usQ">
+                                <rect key="frame" x="25" y="337" width="236" height="38.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="32"/>
                                 <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -229,7 +229,6 @@ active today? Search below.</string>
                             <constraint firstItem="5rk-SP-4ot" firstAttribute="trailing" secondItem="S3Q-VX-8g6" secondAttribute="trailing" id="XIT-fm-z7d"/>
                             <constraint firstItem="S3Q-VX-8g6" firstAttribute="top" secondItem="wlJ-wk-usQ" secondAttribute="bottom" constant="25" id="Xy7-bM-8YD"/>
                             <constraint firstItem="0lJ-4P-luP" firstAttribute="leading" secondItem="5rk-SP-4ot" secondAttribute="leading" id="ZGc-eO-bbS"/>
-                            <constraint firstItem="5rk-SP-4ot" firstAttribute="trailing" secondItem="wlJ-wk-usQ" secondAttribute="trailing" constant="264" id="bm0-nX-TdN"/>
                             <constraint firstItem="0lJ-4P-luP" firstAttribute="bottom" secondItem="5rk-SP-4ot" secondAttribute="bottom" constant="30" id="bu3-Jk-xJa"/>
                             <constraint firstItem="idx-qv-FOz" firstAttribute="centerY" secondItem="Ksh-Z6-MSk" secondAttribute="centerY" id="e4l-fZ-PLO"/>
                             <constraint firstItem="wlJ-wk-usQ" firstAttribute="top" secondItem="Ksh-Z6-MSk" secondAttribute="bottom" constant="50" id="hMt-tw-mVW"/>
@@ -238,6 +237,7 @@ active today? Search below.</string>
                             <constraint firstItem="5rk-SP-4ot" firstAttribute="bottom" secondItem="XiW-zL-2HV" secondAttribute="bottom" constant="641" id="sKU-a0-Ipi"/>
                             <constraint firstItem="wlJ-wk-usQ" firstAttribute="leading" secondItem="5rk-SP-4ot" secondAttribute="leading" constant="25" id="sKh-bb-Mgo"/>
                             <constraint firstItem="0lJ-4P-luP" firstAttribute="trailing" secondItem="5rk-SP-4ot" secondAttribute="trailing" id="y4Q-DM-zFI"/>
+                            <constraint firstItem="5rk-SP-4ot" firstAttribute="trailing" secondItem="wlJ-wk-usQ" secondAttribute="trailing" constant="153" id="y8s-8I-O7s"/>
                             <constraint firstItem="YZ4-rB-119" firstAttribute="top" secondItem="5rk-SP-4ot" secondAttribute="top" constant="10" id="yIz-X8-5zY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5rk-SP-4ot"/>
