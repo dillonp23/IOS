@@ -84,8 +84,8 @@ class UserAuthViewController: UIViewController {
                 UserController.shared.createUser(uid: authResult.user.uid, firstName: firstName, lastName: lastName, email: email, userType: userType, metro: metro)
                 UserController.shared.login()
                 DispatchQueue.main.async {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
+                    let storyboard = UIStoryboard(name: "UserAuth", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Onboarding1")
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                     }
@@ -119,7 +119,6 @@ class UserAuthViewController: UIViewController {
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true, completion: nil)
                     }
-                    
                 }
             }
         }

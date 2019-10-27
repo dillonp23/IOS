@@ -24,6 +24,9 @@
 		5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */; };
 		5DFB3A67235D8B4C00FC8C3E /* Category+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */; };
 		8D6E1392B0CEDFE6C30F6F26 /* Pods_AnywhereFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A362628C5FE391EEC3C324 /* Pods_AnywhereFitness.framework */; };
+		9211560B23662A8B003BF3BD /* FirstOBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211560A23662A8B003BF3BD /* FirstOBViewController.swift */; };
+		9211560D23662A98003BF3BD /* SecondOBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211560C23662A98003BF3BD /* SecondOBViewController.swift */; };
+		9211560F23662AA3003BF3BD /* ThirdOBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211560E23662AA3003BF3BD /* ThirdOBViewController.swift */; };
 		922A745F236351CE00248A3E /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922A745E236351CE00248A3E /* UserAuth.storyboard */; };
 		922A74612363529C00248A3E /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74602363529C00248A3E /* LaunchScreenViewController.swift */; };
 		922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74622363552C00248A3E /* UserAuthViewController.swift */; };
@@ -61,6 +64,9 @@
 		5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitClassRepresentation.swift; sourceTree = "<group>"; };
 		5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Convenience.swift"; sourceTree = "<group>"; };
 		6A1BA65E94CF6EE94C7D206A /* Pods-AnywhereFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.release.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.release.xcconfig"; sourceTree = "<group>"; };
+		9211560A23662A8B003BF3BD /* FirstOBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOBViewController.swift; sourceTree = "<group>"; };
+		9211560C23662A98003BF3BD /* SecondOBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOBViewController.swift; sourceTree = "<group>"; };
+		9211560E23662AA3003BF3BD /* ThirdOBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOBViewController.swift; sourceTree = "<group>"; };
 		922A745E236351CE00248A3E /* UserAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuth.storyboard; sourceTree = "<group>"; };
 		922A74602363529C00248A3E /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		922A74622363552C00248A3E /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		5D571342235B6E070079CED2 /* AnywhereFitness */ = {
 			isa = PBXGroup;
 			children = (
+				9211560923662A69003BF3BD /* Onboarding Views */,
 				929E5899235E4BB1001CF389 /* Custom Views */,
 				929E5896235E4B78001CF389 /* View Controllers */,
 				929E5887235E459C001CF389 /* Fonts */,
@@ -161,6 +168,16 @@
 				5D7B2FC5236553540079125F /* CategoryController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9211560923662A69003BF3BD /* Onboarding Views */ = {
+			isa = PBXGroup;
+			children = (
+				9211560A23662A8B003BF3BD /* FirstOBViewController.swift */,
+				9211560C23662A98003BF3BD /* SecondOBViewController.swift */,
+				9211560E23662AA3003BF3BD /* ThirdOBViewController.swift */,
+			);
+			path = "Onboarding Views";
 			sourceTree = "<group>";
 		};
 		929E5887235E459C001CF389 /* Fonts */ = {
@@ -343,12 +360,15 @@
 				5D571344235B6E070079CED2 /* AppDelegate.swift in Sources */,
 				5D7B2FC6236553540079125F /* CategoryController.swift in Sources */,
 				5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */,
+				9211560F23662AA3003BF3BD /* ThirdOBViewController.swift in Sources */,
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
 				922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */,
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				92D0D1B52363C0D800F0B6BE /* SearchCollectionViewCell.swift in Sources */,
+				9211560B23662A8B003BF3BD /* FirstOBViewController.swift in Sources */,
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
+				9211560D23662A98003BF3BD /* SecondOBViewController.swift in Sources */,
 				929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */,
 				5DFB3A61235D7DB400FC8C3E /* FitClass+Convenience.swift in Sources */,
 				922A74612363529C00248A3E /* LaunchScreenViewController.swift in Sources */,

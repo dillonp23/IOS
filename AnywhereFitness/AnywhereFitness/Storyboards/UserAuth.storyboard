@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -157,6 +157,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ajo-7U-CxW" firstAttribute="leading" secondItem="Mg2-rZ-hJc" secondAttribute="leading" id="H3q-2U-Ctn"/>
                                     <constraint firstItem="IGh-DD-cF2" firstAttribute="centerX" secondItem="y2A-Uh-X3Z" secondAttribute="centerX" id="PyL-M6-UfC"/>
@@ -212,10 +213,165 @@
             </objects>
             <point key="canvasLocation" x="-91.304347826086968" y="155.35714285714286"/>
         </scene>
+        <!--FirstOB View Controller-->
+        <scene sceneID="D7z-Zo-3O1">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding1" id="05j-eP-on7" customClass="FirstOBViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xNO-PY-CX4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ob-bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-Gm-90h">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEB-ze-uod">
+                                <rect key="frame" x="40" y="722" width="334" height="100"/>
+                                <state key="normal" image="nxt-btn"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="05j-eP-on7" eventType="touchUpInside" id="urV-9t-AOm"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-bar" translatesAutoresizingMaskIntoConstraints="NO" id="u2X-65-jfH">
+                                <rect key="frame" x="46" y="264" width="322" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="HgD-9l-5J8"/>
+                                    <constraint firstAttribute="height" constant="73" id="Vyi-UZ-Hc4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aeh-Gm-90h" secondAttribute="bottom" id="5bQ-v4-RTq"/>
+                            <constraint firstItem="FIa-Ak-tKe" firstAttribute="bottom" secondItem="SEB-ze-uod" secondAttribute="bottom" constant="40" id="DTr-ye-sBb"/>
+                            <constraint firstItem="u2X-65-jfH" firstAttribute="top" secondItem="FIa-Ak-tKe" secondAttribute="top" constant="220" id="KSt-mq-wTk"/>
+                            <constraint firstItem="SEB-ze-uod" firstAttribute="centerX" secondItem="xNO-PY-CX4" secondAttribute="centerX" id="YJ2-VA-usP"/>
+                            <constraint firstItem="u2X-65-jfH" firstAttribute="centerX" secondItem="xNO-PY-CX4" secondAttribute="centerX" id="cOQ-ka-pgF"/>
+                            <constraint firstItem="aeh-Gm-90h" firstAttribute="top" secondItem="xNO-PY-CX4" secondAttribute="top" id="lWV-eL-8jh"/>
+                            <constraint firstItem="aeh-Gm-90h" firstAttribute="trailing" secondItem="FIa-Ak-tKe" secondAttribute="trailing" id="mKo-WT-GOW"/>
+                            <constraint firstItem="aeh-Gm-90h" firstAttribute="leading" secondItem="FIa-Ak-tKe" secondAttribute="leading" id="pYG-KK-leT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FIa-Ak-tKe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l6N-s8-NV2"/>
+                    <connections>
+                        <outlet property="nextButton" destination="SEB-ze-uod" id="IuV-Hi-TKC"/>
+                        <outlet property="searchBarImage" destination="u2X-65-jfH" id="xN4-Cn-XXX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FR6-T6-sn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686.95652173913049" y="154.6875"/>
+        </scene>
+        <!--SecondOB View Controller-->
+        <scene sceneID="Pp4-iA-15E">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding2" id="LwM-7r-xGL" customClass="SecondOBViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tx2-WB-K9j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ob-bg-2" translatesAutoresizingMaskIntoConstraints="NO" id="Jal-MO-XqK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiA-r7-QeO">
+                                <rect key="frame" x="123.66666666666669" y="772" width="167" height="50"/>
+                                <state key="normal" image="nxt-btn"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="LwM-7r-xGL" eventType="touchUpInside" id="tGC-Ik-fqu"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-up-btn" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-Aq-H4M">
+                                <rect key="frame" x="249" y="550" width="60" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="RWt-pW-cIr"/>
+                                    <constraint firstAttribute="width" constant="60" id="yrj-5T-oON"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5j4-J0-Tj6" firstAttribute="trailing" secondItem="hi9-Aq-H4M" secondAttribute="trailing" constant="105" id="4Eo-9o-Wbr"/>
+                            <constraint firstItem="Jal-MO-XqK" firstAttribute="top" secondItem="Tx2-WB-K9j" secondAttribute="top" id="Bj9-vK-M2r"/>
+                            <constraint firstItem="DiA-r7-QeO" firstAttribute="top" secondItem="hi9-Aq-H4M" secondAttribute="bottom" constant="210" id="FFd-Ez-cFz"/>
+                            <constraint firstAttribute="bottom" secondItem="Jal-MO-XqK" secondAttribute="bottom" id="JoK-Nk-uIx"/>
+                            <constraint firstItem="Jal-MO-XqK" firstAttribute="leading" secondItem="5j4-J0-Tj6" secondAttribute="leading" id="PGC-bd-rQ3"/>
+                            <constraint firstItem="DiA-r7-QeO" firstAttribute="centerX" secondItem="Tx2-WB-K9j" secondAttribute="centerX" id="Xp8-EQ-UCJ"/>
+                            <constraint firstItem="5j4-J0-Tj6" firstAttribute="bottom" secondItem="DiA-r7-QeO" secondAttribute="bottom" constant="40" id="hNB-if-IEP"/>
+                            <constraint firstItem="Jal-MO-XqK" firstAttribute="trailing" secondItem="5j4-J0-Tj6" secondAttribute="trailing" id="vv7-4x-MhD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5j4-J0-Tj6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wUF-ZK-oRa"/>
+                    <connections>
+                        <outlet property="nextButton" destination="DiA-r7-QeO" id="PVV-wv-8Yh"/>
+                        <outlet property="signUpImage" destination="hi9-Aq-H4M" id="ys6-Jc-KK2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbU-6s-bna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="155"/>
+        </scene>
+        <!--ThirdOB View Controller-->
+        <scene sceneID="y2X-iu-Nhr">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding3" id="u7Q-nC-Sb1" customClass="ThirdOBViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T19-3j-k5c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ob-bg-3" translatesAutoresizingMaskIntoConstraints="NO" id="3k9-h8-5Wb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1M-No-dnC">
+                                <rect key="frame" x="123.66666666666669" y="772" width="167" height="50"/>
+                                <state key="normal" image="get-started-btn"/>
+                                <connections>
+                                    <action selector="getStartedTapped:" destination="u7Q-nC-Sb1" eventType="touchUpInside" id="dlc-Wm-kbX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel-btn" translatesAutoresizingMaskIntoConstraints="NO" id="vsi-4A-fuC">
+                                <rect key="frame" x="222" y="660" width="87" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="Gfo-Wq-XOE"/>
+                                    <constraint firstAttribute="width" constant="87" id="sv6-Rj-ezU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O0Z-16-wmt" firstAttribute="bottom" secondItem="y1M-No-dnC" secondAttribute="bottom" constant="40" id="1jB-ew-Soa"/>
+                            <constraint firstItem="y1M-No-dnC" firstAttribute="top" secondItem="vsi-4A-fuC" secondAttribute="bottom" constant="100" id="CxG-6f-VS1"/>
+                            <constraint firstItem="3k9-h8-5Wb" firstAttribute="leading" secondItem="O0Z-16-wmt" secondAttribute="leading" id="L2m-VJ-T18"/>
+                            <constraint firstItem="3k9-h8-5Wb" firstAttribute="top" secondItem="T19-3j-k5c" secondAttribute="top" id="LfE-U5-Ipg"/>
+                            <constraint firstAttribute="bottom" secondItem="3k9-h8-5Wb" secondAttribute="bottom" id="Nda-O9-9zG"/>
+                            <constraint firstItem="O0Z-16-wmt" firstAttribute="trailing" secondItem="vsi-4A-fuC" secondAttribute="trailing" constant="105" id="aeN-by-D5l"/>
+                            <constraint firstItem="3k9-h8-5Wb" firstAttribute="trailing" secondItem="O0Z-16-wmt" secondAttribute="trailing" id="kX1-vI-7xd"/>
+                            <constraint firstItem="y1M-No-dnC" firstAttribute="centerX" secondItem="T19-3j-k5c" secondAttribute="centerX" id="lfb-hJ-vE5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O0Z-16-wmt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qrf-9c-yOx"/>
+                    <connections>
+                        <outlet property="cancelBtnImage" destination="vsi-4A-fuC" id="zdP-Ad-mXE"/>
+                        <outlet property="getStartedButton" destination="y1M-No-dnC" id="2Hm-I4-XVm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLw-MD-rqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191" y="155"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg" width="414" height="896"/>
+        <image name="cancel-btn" width="87" height="12"/>
+        <image name="get-started-btn" width="167" height="50"/>
         <image name="inputField" width="315" height="50"/>
+        <image name="nxt-btn" width="167" height="50"/>
+        <image name="ob-bg-1" width="414" height="896"/>
+        <image name="ob-bg-2" width="414" height="896"/>
+        <image name="ob-bg-3" width="414" height="896"/>
+        <image name="search-bar" width="322" height="73"/>
+        <image name="sign-up-btn" width="59" height="12"/>
         <image name="topbar" width="414" height="222"/>
     </resources>
 </document>
