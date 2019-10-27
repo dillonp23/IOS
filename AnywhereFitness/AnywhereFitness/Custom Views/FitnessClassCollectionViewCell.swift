@@ -81,30 +81,33 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
     func updateViews() {
         guard let fitClass = fitClass,
             let user = UserController.shared.loggedInUser,
-            let uid = user.uid,
-            let registrants = fitClass.registrants
+            let uid = user.uid
         else { return }
         
-        titleLabel.text = fitClass.title
-        categoryLabel.text = "Class Type: \(fitClass.category)"
-        intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
-        locationLabel.text = "\(fitClass.city), \(fitClass.state)"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, @ h a"
-        if let timeSince1970 = Double(fitClass.startTime) {
-            let date = Date(timeIntervalSince1970: timeSince1970)
-            timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
-        }
-        
-        fitnessCategoryImage.image = UIImage(named: fitClass.category)
-        
-        if registrants.contains(uid) {
-            btnSignUpCancel.setTitle("<<< Cancel registration", for: .normal)
-            registered = true
-        } else {
-            btnSignUpCancel.setTitle("SIGN UP >>>", for: .normal)
-            registered = false
+        DispatchQueue.main.async {
+            self.titleLabel.text = fitClass.title
+            self.categoryLabel.text = "Class Type: \(fitClass.category)"
+            self.intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
+            self.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, @ h a"
+            if let timeSince1970 = Double(fitClass.startTime) {
+                let date = Date(timeIntervalSince1970: timeSince1970)
+                self.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
+            }
+            
+            self.fitnessCategoryImage.image = UIImage(named: fitClass.category)
+            
+            if let registrants = fitClass.registrants {
+                if registrants.contains(uid) {
+                    self.btnSignUpCancel.setTitle("<<< Cancel registration", for: .normal)
+                    self.registered = true
+                } else {
+                    self.btnSignUpCancel.setTitle("SIGN UP >>>", for: .normal)
+                    self.registered = false
+                }
+            }
         }
     }
 }
