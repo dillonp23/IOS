@@ -80,13 +80,15 @@ class AppHomeViewController: UIViewController {
 
 extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fitClassController.fitClassRepresentations.count
+//        return fitClassController.fitClassRepresentations.count
+        return fitClassController.fitClassRepsForUserMetro.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fitnessClassCell", for: indexPath) as? FitnessClassCollectionViewCell else { return UICollectionViewCell() }
         
-        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
+//        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
+        let fitClass = fitClassController.fitClassRepsForUserMetro[indexPath.item]
         
         cell.titleLabel.text = fitClass.title
         cell.categoryLabel.text = "Class Type: \(fitClass.category)"

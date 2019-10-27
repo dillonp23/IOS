@@ -64,28 +64,65 @@ URLSession.shared.dataTask(with: getRequestURL) { (data, res, error) in
         return
     }
     
+//    for rep in allOfThemDic.values {
+//        if rep.category == "Marial Arts" {
+//            let updateURL = baseURL.appendingPathComponent("classes").appendingPathComponent(rep.classID).appendingPathExtension("json")
+//            var request = URLRequest(url: updateURL)
+//            request.httpMethod = "PUT"
+//            var newRep = rep
+//            newRep.category = "Martial Arts"
+//            let encoder = JSONEncoder()
+//            do {
+//                request.httpBody = try encoder.encode(newRep)
+//            } catch {
+//                print("\(rep.classID) failed to encode")
+//                continue
+//            }
+//            URLSession.shared.dataTask(with: request) { (_, _, error) in
+//                if let error = error {
+//                    print("\(rep.classID) failed: \(error)")
+//                    return
+//                }
+//                print("\(rep.classID) updated.")
+//            }.resume()
+//        }
+//    }
+    
     for rep in allOfThemDic.values {
-        if rep.category == "Marial Arts" {
-            let updateURL = baseURL.appendingPathComponent("classes").appendingPathComponent(rep.classID).appendingPathExtension("json")
-            var request = URLRequest(url: updateURL)
-            request.httpMethod = "PUT"
-            var newRep = rep
-            newRep.category = "Martial Arts"
-            let encoder = JSONEncoder()
-            do {
-                request.httpBody = try encoder.encode(newRep)
-            } catch {
-                print("\(rep.classID) failed to encode")
-                continue
-            }
-            URLSession.shared.dataTask(with: request) { (_, _, error) in
-                if let error = error {
-                    print("\(rep.classID) failed: \(error)")
-                    return
-                }
-                print("\(rep.classID) updated.")
-            }.resume()
+        let updateURL = baseURL.appendingPathComponent("classes").appendingPathComponent(rep.classID).appendingPathExtension("json")
+        var request = URLRequest(url: updateURL)
+        request.httpMethod = "PUT"
+        var newRep = rep
+        switch rep.metro {
+//        "Asheville", "Atlana", "Iowa City", "Los Angeles", "Philadelphia", "San Diego"
+        case "Asheville":
+            newRep.state = "NC"
+        case "Atlanta":
+            newRep.state = "GA"
+        case "Iowa City":
+            newRep.state = "IA"
+        case "Los Angeles", "San Diego":
+            newRep.state = "CA"
+        case "Philadelphia":
+            newRep.state = "PA"
+        default:
+            break
         }
+        newRep.city = rep.metro
+        let encoder = JSONEncoder()
+        do {
+            request.httpBody = try encoder.encode(newRep)
+        } catch {
+            print("\(rep.classID) failed to encode")
+            continue
+        }
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print("\(rep.classID) failed: \(error)")
+                return
+            }
+            print("\(rep.classID) updated.")
+        }.resume()
     }
 }.resume()
 

@@ -27,13 +27,13 @@ extension FitClass {
         self.intensity = intensity
         self.metro = metro
         self.addr1 = addr1
-//        self.addr2 = addr2
+        self.addr2 = addr2
         self.city = city
         self.state = state
         self.zip = zip
         self.price = price
-//        self.maxRegistrants = Int16(truncating: NSNumber(nonretainedObject: maxRegistrants))
-//        self.registrants = registrants
+        self.maxRegistrants = Int16(truncating: NSNumber(nonretainedObject: maxRegistrants))
+        self.registrants = registrants
         self.offerPunchcard = offerPunchcard
     }
     
@@ -48,13 +48,13 @@ extension FitClass {
         self.intensity = representation.intensity
         self.metro = representation.metro
         self.addr1 = representation.addr1
-//        self.addr2 = representation.addr2
+        self.addr2 = representation.addr2
         self.city = representation.city
         self.state = representation.state
         self.zip = representation.zip
         self.price = representation.price
-//        self.maxRegistrants = Int16(truncating: NSNumber(nonretainedObject: representation.maxRegistrants))
-//        self.registrants = representation.registrants
+        self.maxRegistrants = Int16(truncating: NSNumber(nonretainedObject: representation.maxRegistrants))
+        self.registrants = representation.registrants
         self.offerPunchcard = representation.offerPunchcard
     }
     
