@@ -168,7 +168,43 @@ class FitClassController {
         }.resume()
     }
     
-    func cancelRegistration(representation: FitClassRepresentation) {
+    func cancelRegistration(representation: FitClassRepresentation, completion: @escaping (Bool) -> Void) {
+        guard let user = UserController.shared.loggedInUser,
+            let uid = user.uid,
+            var currentRegistrants = representation.registrants
+        else {
+            completion(false)
+            return
+        }
         
+        var updatedRep = representation
+        let i = currentRegistrants.firstIndex(of: uid)
+        if let i = i {
+            currentRegistrants.remove(at: i)
+        }
+        updatedRep.registrants = currentRegistrants
+        
+        let updateURL = baseURL.appendingPathComponent("classes").appendingPathComponent(representation.classID).appendingPathExtension("json")
+        var request = URLRequest(url: updateURL)
+        request.httpMethod = "PUT"
+        
+        let encoder = JSONEncoder()
+        do {
+            request.httpBody = try encoder.encode(updatedRep)
+        } catch {
+            print("Unable to encode rep when registering for class: \(error)")
+            completion(false)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, res, error) in
+            if let error = error {
+                print("Error updating class registrations: \(error)")
+                completion(false)
+                return
+            }
+            print(res ?? "No response")
+            completion(true)
+        }.resume()
     }
 }

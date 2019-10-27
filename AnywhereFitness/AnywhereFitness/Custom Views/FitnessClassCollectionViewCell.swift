@@ -16,10 +16,12 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var intensityLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var timeAndDurationLabel: UILabel!
+    @IBOutlet weak var btnSignUpCancel: UIButton!
     
     var fitClass: FitClassRepresentation? { didSet { updateViews() } }
     var fitClassController: FitClassController?
     var delegate: UIViewController?
+    var registered = false
     
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -29,21 +31,43 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
-        if let maxRegistrants = fitClass.maxRegistrants, let numRegistrants = fitClass.registrants?.count {
-            if maxRegistrants >= numRegistrants {
-                alert.title = "Class Full"
-                alert.message = "Sorry, this class is already full. Please select another one."
+        if registered {
+            // cancel registration
+            fitClassController.cancelRegistration(representation: fitClass) { cancelled in
+                if cancelled {
+                    DispatchQueue.main.async {
+                        alert.title = "Registration cancelled"
+                        alert.message = "Your registration for this class has been cancelled. Why not choose another one?"
+                        self.registered = false
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        alert.title = "Couldn't cancel!"
+                        alert.message = "Sorry, something went wrong and we couldn't cancel your registration. Please try again later."
+                    }
+                }
             }
         } else {
-            fitClassController.registerForClass(representation: fitClass) { registered in
-                DispatchQueue.main.async {
-                    if registered {
-                        alert.title = "Registered!"
-                        alert.message = "You have successfully signed up for \(fitClass.title)!"
-                        print("Registered for class: \(fitClass.classID)")
-                    } else {
-                        alert.title = "Not Registered :("
-                        alert.message = "Sorry, something went wrong and you weren't registered. Please try again later."
+            // register user for class
+            if let maxRegistrants = fitClass.maxRegistrants, let numRegistrants = fitClass.registrants?.count {
+                if maxRegistrants >= numRegistrants {
+                    DispatchQueue.main.async {
+                        alert.title = "Class Full"
+                        alert.message = "Sorry, this class is already full. Please select another one."
+                    }
+                }
+            } else {
+                fitClassController.registerForClass(representation: fitClass) { registered in
+                    DispatchQueue.main.async {
+                        if registered {
+                            alert.title = "Registered!"
+                            alert.message = "You have successfully signed up for \(fitClass.title)!"
+                            self.registered = true
+                            print("Registered for class: \(fitClass.classID)")
+                        } else {
+                            alert.title = "Not Registered :("
+                            alert.message = "Sorry, something went wrong and you weren't registered. Please try again later."
+                        }
                     }
                 }
             }
@@ -55,7 +79,12 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        guard let fitClass = fitClass else { return }
+        guard let fitClass = fitClass,
+            let user = UserController.shared.loggedInUser,
+            let uid = user.uid,
+            let registrants = fitClass.registrants
+        else { return }
+        
         titleLabel.text = fitClass.title
         categoryLabel.text = "Class Type: \(fitClass.category)"
         intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
@@ -69,7 +98,13 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
         }
         
         fitnessCategoryImage.image = UIImage(named: fitClass.category)
+        
+        if registrants.contains(uid) {
+            btnSignUpCancel.setTitle("<<< Cancel registration", for: .normal)
+            registered = true
+        } else {
+            btnSignUpCancel.setTitle("SIGN UP >>>", for: .normal)
+            registered = false
+        }
     }
-    
-    
 }

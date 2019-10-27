@@ -185,6 +185,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="btnSignUpCancel" destination="YK2-q8-SJJ" id="rMn-rR-spU"/>
                                             <outlet property="categoryLabel" destination="gre-F5-eHP" id="aHr-hz-tux"/>
                                             <outlet property="fitnessCategoryImage" destination="eXW-dw-w2w" id="Ow7-ZI-GGc"/>
                                             <outlet property="intensityLabel" destination="5gm-Q5-E47" id="e3L-VS-sN1"/>
