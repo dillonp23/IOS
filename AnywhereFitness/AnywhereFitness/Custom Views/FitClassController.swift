@@ -94,7 +94,7 @@ class FitClassController {
         
         return fitClassRepresentations.filter { (rep) -> Bool in
             guard let timestamp = Double(rep.startTime) else { return false }
-            if rep.metro == metro && rep.category == category && Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
+            if rep.metro == metro && rep.category.lowercased() == category.lowercased() && Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
                 return true
             }
             return false

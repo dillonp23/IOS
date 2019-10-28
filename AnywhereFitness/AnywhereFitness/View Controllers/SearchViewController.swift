@@ -15,19 +15,14 @@ class SearchViewController: UIViewController {
     
     
     var searchTerm: String?
-    var fitClassController = FitClassController()
-    var searchResults: [String] = []
+    var fitClassController: FitClassController?
+    var searchResults: [FitClassRepresentation] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fitClassController.fetchClassesFromServer { (_) in
-            
-            DispatchQueue.main.async {
-                self.updateViews()
-                self.collectionView.reloadData()
-            }
-        }
+        updateViews()
+        getResults()
     }
     
 
@@ -42,9 +37,7 @@ class SearchViewController: UIViewController {
     */
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-        guard let searchTerm = searchClassesTextField.text, !searchTerm.isEmpty else { return }
-        
-        
+        getResults()
     }
     
 
@@ -54,14 +47,37 @@ class SearchViewController: UIViewController {
         }
     }
     
+    func getResults() {
+        if let searchTerm = searchClassesTextField.text, !searchTerm.isEmpty {
+            guard let metro = UserController.shared.loggedInUser?.metro, let fitClassController = fitClassController else { return }
+            searchResults = fitClassController.classRepsFor(category: searchTerm, metro: metro)
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        } else {
+            guard let fitClassController = fitClassController else { return }
+            
+            fitClassController.fetchClassesFromServer { (_) in
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let fitClassController = fitClassController else { return 0 }
             return fitClassController.fitClassRepresentations.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            guard let fitClassController = fitClassController else { return UICollectionViewCell() }
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "classSearchCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
             
             let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
