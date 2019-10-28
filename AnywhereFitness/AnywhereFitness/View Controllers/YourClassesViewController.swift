@@ -48,7 +48,7 @@ class YourClassesViewController: UIViewController {
             subtitleLabel.text = "View your upcoming schedule\n and cancel if needed"
         } else {
             addClassBtn.isHidden = false
-            subtitleLabel.text = "View your upcoming schedule\n and add or cancel class"
+            subtitleLabel.text = "View your upcoming schedule\n and add or cancel classes"
         }
     }
     
@@ -61,11 +61,15 @@ class YourClassesViewController: UIViewController {
             self.registeredClasses = fitClassController.classRepsFor(client: user)
             
             DispatchQueue.main.async {
-                let numberOfClasses = self.registeredClasses.count
-                self.numberOfClassesLabel.text = "You currently have \(numberOfClasses) reservation(s)"
+                self.updateViews()
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func updateViews() {
+        let numberOfClasses = registeredClasses.count
+        numberOfClassesLabel.text = "You currently have \(numberOfClasses) reservation(s)"
     }
 
 }
@@ -92,6 +96,9 @@ extension YourClassesViewController: UICollectionViewDelegate, UICollectionViewD
             cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
         }
         
+        cell.fitClass = fitClass
+        cell.delegate = self
+        cell.fitClassController = FitClassController.shared
         
         cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
         
