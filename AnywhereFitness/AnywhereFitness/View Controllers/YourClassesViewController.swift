@@ -14,6 +14,9 @@ class YourClassesViewController: UIViewController {
     @IBOutlet weak var numberOfClassesLabel: UILabel!
     @IBOutlet weak var addClassBtn: UIButton!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var userTypeStackView: UIStackView!
+    @IBOutlet weak var userTypeSwitch: UISwitch!
+    
     
     var registeredClasses: [FitClassRepresentation] = []
     
@@ -40,15 +43,27 @@ class YourClassesViewController: UIViewController {
     }
     */
     
+    @IBAction func toggleUserType(_ sender: UISwitch) {
+        setUpViewForUserType()
+    }
+    
+    
     func setUpViewForUserType() {
         guard let user = UserController.shared.loggedInUser else { return }
         
         if user.userType == "client" {
+            userTypeStackView.isHidden = true
             addClassBtn.isHidden = true
             subtitleLabel.text = "View your upcoming schedule\n and cancel if needed"
         } else {
-            addClassBtn.isHidden = false
-            subtitleLabel.text = "View your upcoming schedule\n and add or cancel classes"
+            userTypeStackView.isHidden = false
+            if userTypeSwitch.isOn == false {
+                addClassBtn.isHidden = true
+                subtitleLabel.text = "View your upcoming schedule\n and cancel if needed"
+            } else if userTypeSwitch.isOn == true {
+                addClassBtn.isHidden = false
+                subtitleLabel.text = "See classes you'll be hosting\n and add or cancel a class"
+            }
         }
     }
     

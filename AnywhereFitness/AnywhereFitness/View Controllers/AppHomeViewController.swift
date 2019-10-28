@@ -38,8 +38,8 @@ class AppHomeViewController: UIViewController {
         checkLoggedInUserStatus()
         FitClassController.shared.fetchClassesFromServer { (_) in
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
                 self.updateViews()
+                self.collectionView.reloadData()
             }
         }
     }
