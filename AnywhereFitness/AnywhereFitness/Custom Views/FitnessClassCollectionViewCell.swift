@@ -115,8 +115,10 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
             self.fitnessCategoryImage.image = UIImage(named: fitClass.category)
             
             if self.registered {
-                self.btnSignUpCancel.setTitle("<<< Cancel registration", for: .normal)
+                self.btnSignUpCancel.setTitleColor(.systemPink, for: .normal)
+                self.btnSignUpCancel.setTitle("CANCEL >>>", for: .normal)
             } else {
+                self.btnSignUpCancel.setTitleColor(UIColor(displayP3Red: 0.337, green: 0.502, blue: 0.914, alpha: 0.9), for: .normal)
                 self.btnSignUpCancel.setTitle("SIGN UP >>>", for: .normal)
             }
         }

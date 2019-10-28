@@ -92,6 +92,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
             }
             
+            
             cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
             
             return cell

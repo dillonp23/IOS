@@ -60,7 +60,7 @@
                                 <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zlg-7i-bzC">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zlg-7i-bzC">
                                 <rect key="frame" x="25" y="371" width="389" height="330"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -73,7 +73,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UtY-XX-zKb" customClass="YourClassesCollectionViewCell" customModule="AnywhereFitness" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YourClassesCell" id="UtY-XX-zKb" customClass="YourClassesCollectionViewCell" customModule="AnywhereFitness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ldu-mj-1Du">
@@ -125,7 +125,7 @@
                                                             <rect key="frame" x="0.0" y="105.66666666666669" width="250" height="39.333333333333343"/>
                                                             <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="10"/>
                                                             <state key="normal" title="CANCEL &gt;&gt;&gt;">
-                                                                <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" red="1" green="0.17647058819999994" blue="0.32745098036333353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                         </button>
                                                     </subviews>
@@ -162,6 +162,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ric-IJ-mdc" id="U2N-ZB-c6w"/>
+                                    <outlet property="delegate" destination="ric-IJ-mdc" id="GEf-Rb-aDM"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-BN-R1V">
                                 <rect key="frame" x="88.666666666666671" y="152.66666666666666" width="236.66666666666663" height="43.333333333333343"/>
@@ -209,6 +213,12 @@ and cancel if needed</string>
                         <viewLayoutGuide key="safeArea" id="eLe-Pc-MHC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Classes" image="classesBtn" id="sg3-R7-9qE"/>
+                    <connections>
+                        <outlet property="addClassBtn" destination="Se4-tr-Smz" id="rEW-dL-fX8"/>
+                        <outlet property="collectionView" destination="Zlg-7i-bzC" id="r8P-3D-q9V"/>
+                        <outlet property="numberOfClassesLabel" destination="dj1-CR-1zw" id="hZd-aF-m1F"/>
+                        <outlet property="subtitleLabel" destination="bxv-BN-R1V" id="EsI-IW-EHn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V45-Ob-Zck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -696,6 +706,7 @@ active today? Search below.</string>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="btnSignUpCancel" destination="RX5-Fg-fiP" id="eKd-Ui-jc1"/>
                                             <outlet property="categoryLabel" destination="8MX-bk-LjZ" id="RPr-SM-fQP"/>
                                             <outlet property="fitnessCategoryImage" destination="RyS-TA-m6d" id="tS2-FJ-09k"/>
                                             <outlet property="intensityLabel" destination="yYo-jH-Lt8" id="1Ub-56-Hkv"/>
@@ -753,7 +764,7 @@ active today? Search below.</string>
                     </tabBar>
                     <connections>
                         <segue destination="TJs-d3-O6A" kind="relationship" relationship="viewControllers" id="rXc-lX-Ibp"/>
-                        <segue destination="ric-IJ-mdc" kind="relationship" relationship="viewControllers" id="I7g-e1-UJb"/>
+                        <segue destination="ric-IJ-mdc" kind="relationship" relationship="viewControllers" destinationCreationSelector="YourClassesSegue" id="I7g-e1-UJb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcG-g5-68N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

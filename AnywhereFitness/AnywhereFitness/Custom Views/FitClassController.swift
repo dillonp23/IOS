@@ -13,6 +13,7 @@ import Firebase
 
 class FitClassController {
     
+    static var shared = FitClassController()
     private let baseURL = URL(string: "https://lambda-anywhere-fitness.firebaseio.com/")!
     
     var fitClassRepresentations: [FitClassRepresentation] = []
@@ -54,6 +55,7 @@ class FitClassController {
             let decoder = JSONDecoder()
             
             do {
+                self.fitClassRepresentations.removeAll()
                 let fitClassDictionary = try decoder.decode([String: FitClassRepresentation].self, from: data)
                 
                 for fitClass in fitClassDictionary {
