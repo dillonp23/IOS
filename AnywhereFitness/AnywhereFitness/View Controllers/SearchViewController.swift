@@ -93,6 +93,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             }
             
             
+            cell.fitClass = fitClass
+            cell.delegate = self
+            cell.fitClassController = FitClassController.shared
+            
+            
             cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
             
             return cell
