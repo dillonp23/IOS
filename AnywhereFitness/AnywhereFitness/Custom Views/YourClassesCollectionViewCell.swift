@@ -17,4 +17,7 @@ class YourClassesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var timeAndDurationLabel: UILabel!
     
+    @IBAction func cancelBtnTapped(_ sender: Any) {
+    }
+    
 }

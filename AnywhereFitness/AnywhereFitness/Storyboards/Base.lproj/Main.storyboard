@@ -127,6 +127,9 @@
                                                             <state key="normal" title="CANCEL &gt;&gt;&gt;">
                                                                 <color key="titleColor" red="1" green="0.17647058819999994" blue="0.32745098036333353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="cancelBtnTapped:" destination="UtY-XX-zKb" eventType="touchUpInside" id="6Ul-ux-62M"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>

@@ -19,7 +19,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnSignUpCancel: UIButton!
     
     
-        var fitClass: FitClassRepresentation? { didSet { updateViews() } }
+    var fitClass: FitClassRepresentation? { didSet { updateViews() } }
         var fitClassController: FitClassController?
         var delegate: UIViewController? //AppHomeViewController?
         var registered: Bool {
@@ -92,7 +92,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
                 }
             }
             DispatchQueue.main.async {
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+//                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { (_) in
+                    delegate.dismiss(animated: true, completion: nil)
+                }))
                 delegate.present(alert, animated: true, completion: nil)
             }
         }
@@ -116,8 +119,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
                 self.fitnessCategoryImage.image = UIImage(named: fitClass.category)
                 
                 if self.registered {
-                    self.btnSignUpCancel.setTitle("<<< Cancel registration", for: .normal)
+                    self.btnSignUpCancel.setTitleColor(.systemPink, for: .normal)
+                    self.btnSignUpCancel.setTitle("CANCEL >>>", for: .normal)
                 } else {
+                    self.btnSignUpCancel.setTitleColor(UIColor(displayP3Red: 0.337, green: 0.502, blue: 0.914, alpha: 0.9), for: .normal)
                     self.btnSignUpCancel.setTitle("SIGN UP >>>", for: .normal)
                 }
             }
