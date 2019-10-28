@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkb-dH-0KI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkb-dH-0KI">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -247,14 +247,14 @@ and cancel if needed</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-aU-pvJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-aU-pvJ">
                                 <rect key="frame" x="0.0" y="122" width="414" height="1024"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9s-Ny-JPg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Or6-4Y-uhK">
-                                                <rect key="frame" x="20" y="0.0" width="374" height="770"/>
+                                                <rect key="frame" x="20" y="30" width="374" height="892"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Title" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="htH-tg-S61">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -268,10 +268,10 @@ and cancel if needed</string>
                                                         <rect key="frame" x="0.0" y="58" width="374" height="216"/>
                                                     </datePicker>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gG-pSE">
-                                                        <rect key="frame" x="0.0" y="282" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="282" width="374" height="172"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Duration" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-LH-1t7" userLabel="Duration">
-                                                                <rect key="frame" x="0.0" y="0.0" width="230.33333333333334" height="50"/>
+                                                                <rect key="frame" x="0.0" y="61" width="230.33333333333334" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="wFO-tk-wiD"/>
                                                                 </constraints>
@@ -279,7 +279,7 @@ and cancel if needed</string>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-kX-NX1">
-                                                                <rect key="frame" x="242.33333333333331" y="14.999999999999998" width="131.66666666666669" height="20.333333333333329"/>
+                                                                <rect key="frame" x="242.33333333333331" y="76" width="131.66666666666669" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -287,13 +287,13 @@ and cancel if needed</string>
                                                         </subviews>
                                                     </stackView>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvi-UG-DCr" userLabel="CategoryAndIntensity">
-                                                        <rect key="frame" x="0.0" y="340" width="374" height="140"/>
+                                                        <rect key="frame" x="0.0" y="462" width="374" height="140"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="yDH-Vx-BA4"/>
                                                         </constraints>
                                                     </pickerView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-PV-vzX">
-                                                        <rect key="frame" x="0.0" y="488" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="610" width="374" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="1HC-OC-fHG"/>
                                                         </constraints>
@@ -301,7 +301,7 @@ and cancel if needed</string>
                                                         <textInputTraits key="textInputTraits" textContentType="address-line1"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Adrress Line 2" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-wQ-eKd">
-                                                        <rect key="frame" x="0.0" y="546" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="668" width="374" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="u5g-qJ-i78"/>
                                                         </constraints>
@@ -309,7 +309,7 @@ and cancel if needed</string>
                                                         <textInputTraits key="textInputTraits" textContentType="address-line2"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="HCO-mW-4yU">
-                                                        <rect key="frame" x="0.0" y="604" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="726" width="374" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="QXt-lP-Tgp"/>
                                                         </constraints>
@@ -317,7 +317,7 @@ and cancel if needed</string>
                                                         <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hHs-2G-Dd6">
-                                                        <rect key="frame" x="0.0" y="662" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="784" width="374" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-vA-eDA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
@@ -338,7 +338,7 @@ and cancel if needed</string>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-Up-3UH">
-                                                        <rect key="frame" x="0.0" y="720" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="842" width="374" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="kZq-Ga-w9t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
@@ -361,16 +361,17 @@ and cancel if needed</string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiZ-5g-W1t">
-                                                <rect key="frame" x="123.66666666666669" y="782" width="167" height="50"/>
+                                                <rect key="frame" x="123.66666666666669" y="934" width="167" height="50"/>
                                                 <state key="normal" backgroundImage="savebtn"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="fiZ-5g-W1t" firstAttribute="centerX" secondItem="G9s-Ny-JPg" secondAttribute="centerX" id="4IR-GU-p5A"/>
-                                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="top" secondItem="G9s-Ny-JPg" secondAttribute="top" id="5dZ-Gu-8Mo"/>
+                                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="top" secondItem="G9s-Ny-JPg" secondAttribute="top" constant="30" id="5dZ-Gu-8Mo"/>
                                             <constraint firstAttribute="trailing" secondItem="Or6-4Y-uhK" secondAttribute="trailing" constant="20" id="9GM-Md-qd1"/>
                                             <constraint firstItem="Or6-4Y-uhK" firstAttribute="leading" secondItem="G9s-Ny-JPg" secondAttribute="leading" constant="20" id="M8E-uD-WHk"/>
+                                            <constraint firstAttribute="bottom" secondItem="fiZ-5g-W1t" secondAttribute="bottom" constant="40" id="aNL-Ft-FXR"/>
                                             <constraint firstItem="fiZ-5g-W1t" firstAttribute="top" secondItem="Or6-4Y-uhK" secondAttribute="bottom" constant="12" id="nh0-fO-zYh"/>
                                         </constraints>
                                     </view>
