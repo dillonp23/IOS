@@ -73,7 +73,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UtY-XX-zKb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UtY-XX-zKb" customClass="YourClassesCollectionViewCell" customModule="AnywhereFitness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ldu-mj-1Du">
@@ -152,6 +152,14 @@
                                                 <constraint firstItem="uf2-vE-G34" firstAttribute="top" secondItem="ldu-mj-1Du" secondAttribute="top" constant="160" id="uhP-k0-aFi"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="RNN-At-WKC" id="acz-8h-PCS"/>
+                                            <outlet property="fitnessCategoryImage" destination="aBM-KW-m80" id="6p6-hB-NzO"/>
+                                            <outlet property="intensityLabel" destination="rtK-i9-wpE" id="ydJ-s2-fJT"/>
+                                            <outlet property="locationLabel" destination="6e6-Jt-1aC" id="tZH-47-VMr"/>
+                                            <outlet property="timeAndDurationLabel" destination="sRI-s4-Kc9" id="Qaa-ST-rsW"/>
+                                            <outlet property="titleLabel" destination="Gcz-E0-phA" id="6OL-3T-T9e"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -240,14 +248,27 @@ and cancel if needed</string>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Duration" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-J6-V6d">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gG-pSE">
                                         <rect key="frame" x="0.0" y="58" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="dRg-Uz-rPy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-J6-V6d" userLabel="StartTime">
+                                                <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dRg-Uz-rPy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Duration" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-LH-1t7" userLabel="Duration">
+                                                <rect key="frame" x="173" y="0.0" width="161" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="wFO-tk-wiD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvi-UG-DCr" userLabel="CategoryAndIntensity">
                                         <rect key="frame" x="0.0" y="116" width="334" height="140"/>
                                         <constraints>
@@ -257,7 +278,7 @@ and cancel if needed</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dan-UC-zIQ">
-                                <rect key="frame" x="40" y="427" width="334" height="282"/>
+                                <rect key="frame" x="40" y="427" width="334" height="224"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-PV-vzX">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -275,29 +296,8 @@ and cancel if needed</string>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gG-pSE">
-                                        <rect key="frame" x="0.0" y="116" width="334" height="50"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="INC-2c-g7a">
-                                                <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="efb-lz-kHo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-LH-1t7">
-                                                <rect key="frame" x="173" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="wFO-tk-wiD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-xW-4GU">
-                                        <rect key="frame" x="0.0" y="174" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="116" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6FR-aD-6zG"/>
                                         </constraints>
@@ -305,7 +305,7 @@ and cancel if needed</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-Up-3UH">
-                                        <rect key="frame" x="0.0" y="232" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="174" width="334" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="kZq-Ga-w9t">
                                                 <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>

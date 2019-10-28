@@ -32,6 +32,7 @@
 		922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74622363552C00248A3E /* UserAuthViewController.swift */; };
 		92588E3523666E7B0034AA00 /* YourClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92588E3423666E7B0034AA00 /* YourClassesViewController.swift */; };
 		92588E3723666EA40034AA00 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92588E3623666EA40034AA00 /* AddClassViewController.swift */; };
+		92588E39236671360034AA00 /* YourClassesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92588E38236671360034AA00 /* YourClassesCollectionViewCell.swift */; };
 		929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5888235E45E2001CF389 /* Lato-Medium.ttf */; };
 		929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5889235E45E2001CF389 /* Lato-Black.ttf */; };
 		929E5891235E45E2001CF389 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588A235E45E2001CF389 /* Lato-Bold.ttf */; };
@@ -74,6 +75,7 @@
 		922A74622363552C00248A3E /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		92588E3423666E7B0034AA00 /* YourClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClassesViewController.swift; sourceTree = "<group>"; };
 		92588E3623666EA40034AA00 /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		92588E38236671360034AA00 /* YourClassesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClassesCollectionViewCell.swift; sourceTree = "<group>"; };
 		929E5888235E45E2001CF389 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		929E5889235E45E2001CF389 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		929E588A235E45E2001CF389 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				929E589A235E4BE0001CF389 /* FitnessClassCollectionViewCell.swift */,
 				92D0D1B42363C0D800F0B6BE /* SearchCollectionViewCell.swift */,
+				92588E38236671360034AA00 /* YourClassesCollectionViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
 				922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */,
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
+				92588E39236671360034AA00 /* YourClassesCollectionViewCell.swift in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				92D0D1B52363C0D800F0B6BE /* SearchCollectionViewCell.swift in Sources */,
 				92588E3523666E7B0034AA00 /* YourClassesViewController.swift in Sources */,
