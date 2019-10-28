@@ -28,7 +28,7 @@
         <!--Your Classes-->
         <scene sceneID="62z-27-BTc">
             <objects>
-                <viewController id="ric-IJ-mdc" sceneMemberID="viewController">
+                <viewController id="ric-IJ-mdc" customClass="YourClassesViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rav-0Z-3fC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,10 +206,10 @@ and cancel if needed</string>
             </objects>
             <point key="canvasLocation" x="1697.1014492753625" y="580.58035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Class View Controller-->
         <scene sceneID="dqf-SO-MFf">
             <objects>
-                <viewController id="vcA-KP-vi5" sceneMemberID="viewController">
+                <viewController id="vcA-KP-vi5" customClass="AddClassViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXh-hZ-4UM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -30,6 +30,8 @@
 		922A745F236351CE00248A3E /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922A745E236351CE00248A3E /* UserAuth.storyboard */; };
 		922A74612363529C00248A3E /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74602363529C00248A3E /* LaunchScreenViewController.swift */; };
 		922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A74622363552C00248A3E /* UserAuthViewController.swift */; };
+		92588E3523666E7B0034AA00 /* YourClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92588E3423666E7B0034AA00 /* YourClassesViewController.swift */; };
+		92588E3723666EA40034AA00 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92588E3623666EA40034AA00 /* AddClassViewController.swift */; };
 		929E588F235E45E2001CF389 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5888235E45E2001CF389 /* Lato-Medium.ttf */; };
 		929E5890235E45E2001CF389 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E5889235E45E2001CF389 /* Lato-Black.ttf */; };
 		929E5891235E45E2001CF389 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929E588A235E45E2001CF389 /* Lato-Bold.ttf */; };
@@ -70,6 +72,8 @@
 		922A745E236351CE00248A3E /* UserAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserAuth.storyboard; sourceTree = "<group>"; };
 		922A74602363529C00248A3E /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		922A74622363552C00248A3E /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
+		92588E3423666E7B0034AA00 /* YourClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClassesViewController.swift; sourceTree = "<group>"; };
+		92588E3623666EA40034AA00 /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		929E5888235E45E2001CF389 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		929E5889235E45E2001CF389 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		929E588A235E45E2001CF389 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				92D1BFE02361389700CC5155 /* SearchViewController.swift */,
 				922A74602363529C00248A3E /* LaunchScreenViewController.swift */,
 				922A74622363552C00248A3E /* UserAuthViewController.swift */,
+				92588E3423666E7B0034AA00 /* YourClassesViewController.swift */,
+				92588E3623666EA40034AA00 /* AddClassViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -366,7 +372,9 @@
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
 				5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */,
 				92D0D1B52363C0D800F0B6BE /* SearchCollectionViewCell.swift in Sources */,
+				92588E3523666E7B0034AA00 /* YourClassesViewController.swift in Sources */,
 				9211560B23662A8B003BF3BD /* FirstOBViewController.swift in Sources */,
+				92588E3723666EA40034AA00 /* AddClassViewController.swift in Sources */,
 				5D54F772235D8C9100EFF1A8 /* CategoryRepresentation.swift in Sources */,
 				9211560D23662A98003BF3BD /* SecondOBViewController.swift in Sources */,
 				929E589D235E5CE8001CF389 /* FitClassController.swift in Sources */,
