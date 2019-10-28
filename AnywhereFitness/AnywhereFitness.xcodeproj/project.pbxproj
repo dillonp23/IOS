@@ -17,9 +17,11 @@
 		5D571358235B713F0079CED2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D571357235B713F0079CED2 /* GoogleService-Info.plist */; };
 		5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D57135C235D342E0079CED2 /* AnywhereFitness.xcdatamodeld */; };
 		5D7B2FC6236553540079125F /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7B2FC5236553540079125F /* CategoryController.swift */; };
+		5DBB75012367712A002EA3B5 /* RegList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBB75002367712A002EA3B5 /* RegList.storyboard */; };
 		5DC71621235D76B600EC033C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71620235D76B600EC033C /* CoreDataStack.swift */; };
 		5DC71623235D772700EC033C /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71622235D772700EC033C /* User+Convenience.swift */; };
 		5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC71624235D78D400EC033C /* UserRepresentation.swift */; };
+		5DDD733F23677E7600A883E4 /* RegListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD733E23677E7600A883E4 /* RegListViewController.swift */; };
 		5DFB3A61235D7DB400FC8C3E /* FitClass+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A60235D7DB400FC8C3E /* FitClass+Convenience.swift */; };
 		5DFB3A63235D83D400FC8C3E /* FitClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */; };
 		5DFB3A67235D8B4C00FC8C3E /* Category+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */; };
@@ -60,9 +62,11 @@
 		5D571357235B713F0079CED2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D57135D235D342E0079CED2 /* AnywhereFitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnywhereFitness.xcdatamodel; sourceTree = "<group>"; };
 		5D7B2FC5236553540079125F /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryController.swift; path = AnywhereFitness/Model/CategoryController.swift; sourceTree = SOURCE_ROOT; };
+		5DBB75002367712A002EA3B5 /* RegList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegList.storyboard; sourceTree = "<group>"; };
 		5DC71620235D76B600EC033C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5DC71622235D772700EC033C /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		5DC71624235D78D400EC033C /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		5DDD733E23677E7600A883E4 /* RegListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegListViewController.swift; sourceTree = "<group>"; };
 		5DFB3A60235D7DB400FC8C3E /* FitClass+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitClass+Convenience.swift"; sourceTree = "<group>"; };
 		5DFB3A62235D83D400FC8C3E /* FitClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitClassRepresentation.swift; sourceTree = "<group>"; };
 		5DFB3A66235D8B4C00FC8C3E /* Category+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Convenience.swift"; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				5D571349235B6E070079CED2 /* Main.storyboard */,
 				5D57134E235B6E0A0079CED2 /* LaunchScreen.storyboard */,
 				922A745E236351CE00248A3E /* UserAuth.storyboard */,
+				5DBB75002367712A002EA3B5 /* RegList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				922A74622363552C00248A3E /* UserAuthViewController.swift */,
 				92588E3423666E7B0034AA00 /* YourClassesViewController.swift */,
 				92588E3623666EA40034AA00 /* AddClassViewController.swift */,
+				5DDD733E23677E7600A883E4 /* RegListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				5D571350235B6E0A0079CED2 /* LaunchScreen.storyboard in Resources */,
 				5D571358235B713F0079CED2 /* GoogleService-Info.plist in Resources */,
 				5D57134D235B6E0A0079CED2 /* Assets.xcassets in Resources */,
+				5DBB75012367712A002EA3B5 /* RegList.storyboard in Resources */,
 				929E5892235E45E2001CF389 /* Lato-MediumItalic.ttf in Resources */,
 				922A745F236351CE00248A3E /* UserAuth.storyboard in Resources */,
 				929E5893235E45E2001CF389 /* Lato-Heavy.ttf in Resources */,
@@ -371,6 +378,7 @@
 				5DC71625235D78D400EC033C /* UserRepresentation.swift in Sources */,
 				9211560F23662AA3003BF3BD /* ThirdOBViewController.swift in Sources */,
 				5D57135E235D342E0079CED2 /* AnywhereFitness.xcdatamodeld in Sources */,
+				5DDD733F23677E7600A883E4 /* RegListViewController.swift in Sources */,
 				922A74632363552C00248A3E /* UserAuthViewController.swift in Sources */,
 				5D1AC104235EAA23000B85E0 /* UserController.swift in Sources */,
 				92588E39236671360034AA00 /* YourClassesCollectionViewCell.swift in Sources */,
