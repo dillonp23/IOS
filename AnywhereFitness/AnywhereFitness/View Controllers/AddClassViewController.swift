@@ -23,14 +23,16 @@ class AddClassViewController: UIViewController {
     @IBOutlet weak var txtCapacity: UITextField!
     
     var fitClassController: FitClassController?
+    var categoryController = CategoryController()
     var startTime: String?
     var category = ""
     var intensity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        pkrCategoryIntensity.delegate = self
+        pkrCategoryIntensity.dataSource = self
     }
     
     @IBAction func saveTapped(_ sender: Any) {
@@ -52,7 +54,7 @@ class AddClassViewController: UIViewController {
         if let capacityString = txtCapacity.text {
             capacity = Int(capacityString)
         }
-        
+                
         let fitClass = FitClass(classID: UUID().uuidString, instructor: uid, startTime: startTime, duration: duration, title: title, category: category, intensity: intensity, metro: metro, addr1: addr1, addr2: addr2, city: city, state: state, zip: zip, price: price, maxRegistrants: capacity)
         
         fitClassController.createOrUpdateFitClass(with: fitClass.representation) { created in
@@ -65,6 +67,56 @@ class AddClassViewController: UIViewController {
         }
     }
     
+    @IBAction func startTimeUpdated(_ sender: UIDatePicker) {
+        startTime = String(sender.date.timeIntervalSince1970)
+    }
     
+    
+}
 
+extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1 {
+            return categoryController.allCategories.count
+        } else {
+            return 3
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 1 {
+            return categoryController.allCategoriesAsStrings[row]
+        }
+        var intensity: String
+        switch row {
+        case 0:
+            intensity = "light"
+        case 1:
+            intensity = "medium"
+        default:
+            intensity = "intense"
+        }
+        return intensity
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 1 {
+            category = categoryController.allCategoriesAsStrings[row]
+        } else {
+            var intensity: String
+            switch row {
+            case 0:
+                intensity = "light"
+            case 1:
+                intensity = "medium"
+            default:
+                intensity = "intense"
+            }
+            self.intensity = intensity
+        }
+    }
 }
