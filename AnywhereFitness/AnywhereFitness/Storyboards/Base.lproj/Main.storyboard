@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkb-dH-0KI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkb-dH-0KI">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -229,11 +229,11 @@ and cancel if needed</string>
             <objects>
                 <viewController id="vcA-KP-vi5" customClass="AddClassViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXh-hZ-4UM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="UWd-ga-zb5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newClassHeader" translatesAutoresizingMaskIntoConstraints="NO" id="H2Y-MY-RoQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
@@ -247,124 +247,177 @@ and cancel if needed</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Or6-4Y-uhK">
-                                <rect key="frame" x="40" y="159" width="334" height="256"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-aU-pvJ">
+                                <rect key="frame" x="0.0" y="122" width="414" height="1024"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Title" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="htH-tg-S61">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="n5J-4K-zxO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gG-pSE">
-                                        <rect key="frame" x="0.0" y="58" width="334" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9s-Ny-JPg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-J6-V6d" userLabel="StartTime">
-                                                <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="dRg-Uz-rPy"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Duration" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-LH-1t7" userLabel="Duration">
-                                                <rect key="frame" x="173" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="wFO-tk-wiD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Or6-4Y-uhK">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="770"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Title" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="htH-tg-S61">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="n5J-4K-zxO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wi6-zK-Sn2">
+                                                        <rect key="frame" x="0.0" y="58" width="374" height="216"/>
+                                                    </datePicker>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gG-pSE">
+                                                        <rect key="frame" x="0.0" y="282" width="374" height="50"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Duration" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-LH-1t7" userLabel="Duration">
+                                                                <rect key="frame" x="0.0" y="0.0" width="230.33333333333334" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="wFO-tk-wiD"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-kX-NX1">
+                                                                <rect key="frame" x="242.33333333333331" y="14.999999999999998" width="131.66666666666669" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvi-UG-DCr" userLabel="CategoryAndIntensity">
+                                                        <rect key="frame" x="0.0" y="340" width="374" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="140" id="yDH-Vx-BA4"/>
+                                                        </constraints>
+                                                    </pickerView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-PV-vzX">
+                                                        <rect key="frame" x="0.0" y="488" width="374" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="1HC-OC-fHG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-line1"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Adrress Line 2" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-wQ-eKd">
+                                                        <rect key="frame" x="0.0" y="546" width="374" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="u5g-qJ-i78"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-line2"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="HCO-mW-4yU">
+                                                        <rect key="frame" x="0.0" y="604" width="374" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="QXt-lP-Tgp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level2"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hHs-2G-Dd6">
+                                                        <rect key="frame" x="0.0" y="662" width="374" height="50"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-vA-eDA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="3P1-ZB-mqC"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="address-level1"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-xW-4GU">
+                                                                <rect key="frame" x="193" y="0.0" width="181" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="6FR-aD-6zG"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-Up-3UH">
+                                                        <rect key="frame" x="0.0" y="720" width="374" height="50"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="kZq-Ga-w9t">
+                                                                <rect key="frame" x="0.0" y="0.0" width="181" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="bPw-cu-btf"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Capacity" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="9ju-RT-EWQ">
+                                                                <rect key="frame" x="193" y="0.0" width="181" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="DRs-gM-7nk"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiZ-5g-W1t">
+                                                <rect key="frame" x="123.66666666666669" y="782" width="167" height="50"/>
+                                                <state key="normal" backgroundImage="savebtn"/>
+                                            </button>
                                         </subviews>
-                                    </stackView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvi-UG-DCr" userLabel="CategoryAndIntensity">
-                                        <rect key="frame" x="0.0" y="116" width="334" height="140"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="yDH-Vx-BA4"/>
+                                            <constraint firstItem="fiZ-5g-W1t" firstAttribute="centerX" secondItem="G9s-Ny-JPg" secondAttribute="centerX" id="4IR-GU-p5A"/>
+                                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="top" secondItem="G9s-Ny-JPg" secondAttribute="top" id="5dZ-Gu-8Mo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Or6-4Y-uhK" secondAttribute="trailing" constant="20" id="9GM-Md-qd1"/>
+                                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="leading" secondItem="G9s-Ny-JPg" secondAttribute="leading" constant="20" id="M8E-uD-WHk"/>
+                                            <constraint firstItem="fiZ-5g-W1t" firstAttribute="top" secondItem="Or6-4Y-uhK" secondAttribute="bottom" constant="12" id="nh0-fO-zYh"/>
                                         </constraints>
-                                    </pickerView>
+                                    </view>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dan-UC-zIQ">
-                                <rect key="frame" x="40" y="427" width="334" height="224"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-PV-vzX">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1HC-OC-fHG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Adrress Line 2" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-wQ-eKd">
-                                        <rect key="frame" x="0.0" y="58" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="u5g-qJ-i78"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" textAlignment="center" minimumFontSize="17" background="lrgTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-xW-4GU">
-                                        <rect key="frame" x="0.0" y="116" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="6FR-aD-6zG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-Up-3UH">
-                                        <rect key="frame" x="0.0" y="174" width="334" height="50"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="kZq-Ga-w9t">
-                                                <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="bPw-cu-btf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Capacity" textAlignment="center" minimumFontSize="17" background="smlTxtFld" translatesAutoresizingMaskIntoConstraints="NO" id="9ju-RT-EWQ">
-                                                <rect key="frame" x="173" y="0.0" width="161" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="DRs-gM-7nk"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiZ-5g-W1t">
-                                <rect key="frame" x="123.66666666666669" y="752" width="167" height="50"/>
-                                <state key="normal" backgroundImage="savebtn"/>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="G9s-Ny-JPg" firstAttribute="width" secondItem="1lv-aU-pvJ" secondAttribute="width" id="CLg-2g-BkH"/>
+                                    <constraint firstItem="G9s-Ny-JPg" firstAttribute="height" secondItem="1lv-aU-pvJ" secondAttribute="height" priority="250" id="Go1-AY-jDT"/>
+                                    <constraint firstAttribute="bottom" secondItem="G9s-Ny-JPg" secondAttribute="bottom" id="Hgx-6d-VCV"/>
+                                    <constraint firstItem="G9s-Ny-JPg" firstAttribute="leading" secondItem="1lv-aU-pvJ" secondAttribute="leading" id="JWB-De-Pnk"/>
+                                    <constraint firstItem="G9s-Ny-JPg" firstAttribute="top" secondItem="1lv-aU-pvJ" secondAttribute="top" id="WaD-lS-hTF"/>
+                                    <constraint firstAttribute="trailing" secondItem="G9s-Ny-JPg" secondAttribute="trailing" id="krt-9k-Z3D"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="H2Y-MY-RoQ" firstAttribute="trailing" secondItem="QE6-d0-QgP" secondAttribute="trailing" id="2E8-FY-xed"/>
                             <constraint firstItem="UWd-ga-zb5" firstAttribute="top" secondItem="dXh-hZ-4UM" secondAttribute="top" id="A5r-r9-uZo"/>
-                            <constraint firstItem="QE6-d0-QgP" firstAttribute="trailing" secondItem="dan-UC-zIQ" secondAttribute="trailing" constant="40" id="B5g-WV-nGW"/>
-                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="top" secondItem="H2Y-MY-RoQ" secondAttribute="bottom" constant="45" id="Bzv-ec-IzI"/>
                             <constraint firstItem="P3c-5r-yyK" firstAttribute="centerX" secondItem="dXh-hZ-4UM" secondAttribute="centerX" id="Erk-Mn-YA6"/>
+                            <constraint firstItem="1lv-aU-pvJ" firstAttribute="trailing" secondItem="QE6-d0-QgP" secondAttribute="trailing" id="Rkr-el-1KB"/>
                             <constraint firstItem="UWd-ga-zb5" firstAttribute="trailing" secondItem="QE6-d0-QgP" secondAttribute="trailing" id="Skd-kr-VLf"/>
-                            <constraint firstItem="fiZ-5g-W1t" firstAttribute="centerX" secondItem="dXh-hZ-4UM" secondAttribute="centerX" id="T9e-Tr-czp"/>
                             <constraint firstItem="P3c-5r-yyK" firstAttribute="top" secondItem="QE6-d0-QgP" secondAttribute="top" constant="40" id="UPa-lD-tAf"/>
                             <constraint firstItem="H2Y-MY-RoQ" firstAttribute="top" secondItem="QE6-d0-QgP" secondAttribute="top" id="Vda-G8-cge"/>
-                            <constraint firstAttribute="bottom" secondItem="fiZ-5g-W1t" secondAttribute="bottom" constant="40" id="Z1s-vz-xBP"/>
+                            <constraint firstItem="1lv-aU-pvJ" firstAttribute="leading" secondItem="QE6-d0-QgP" secondAttribute="leading" id="VrM-dH-eA9"/>
+                            <constraint firstItem="1lv-aU-pvJ" firstAttribute="top" secondItem="H2Y-MY-RoQ" secondAttribute="bottom" constant="8" id="crf-i1-Wxf"/>
                             <constraint firstItem="H2Y-MY-RoQ" firstAttribute="leading" secondItem="QE6-d0-QgP" secondAttribute="leading" id="g9u-YL-7rx"/>
                             <constraint firstItem="UWd-ga-zb5" firstAttribute="leading" secondItem="QE6-d0-QgP" secondAttribute="leading" id="m51-8u-3fd"/>
-                            <constraint firstItem="dan-UC-zIQ" firstAttribute="leading" secondItem="QE6-d0-QgP" secondAttribute="leading" constant="40" id="sXq-en-pe7"/>
-                            <constraint firstItem="QE6-d0-QgP" firstAttribute="trailing" secondItem="Or6-4Y-uhK" secondAttribute="trailing" constant="40" id="uHL-W5-UFe"/>
                             <constraint firstAttribute="bottom" secondItem="UWd-ga-zb5" secondAttribute="bottom" id="vbJ-5B-EL9"/>
-                            <constraint firstItem="dan-UC-zIQ" firstAttribute="top" secondItem="Or6-4Y-uhK" secondAttribute="bottom" constant="12" id="veU-aJ-aMu"/>
-                            <constraint firstItem="Or6-4Y-uhK" firstAttribute="leading" secondItem="QE6-d0-QgP" secondAttribute="leading" constant="40" id="xVJ-XY-4my"/>
+                            <constraint firstItem="1lv-aU-pvJ" firstAttribute="bottom" secondItem="QE6-d0-QgP" secondAttribute="bottom" constant="34" id="ydS-Jw-PrE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QE6-d0-QgP"/>
                     </view>
                     <navigationItem key="navigationItem" id="1vo-1w-bSF"/>
+                    <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="pkrCategoryIntensity" destination="vvi-UG-DCr" id="yuZ-xD-PlK"/>
+                        <outlet property="pkrStartTime" destination="Wi6-zK-Sn2" id="jTt-9F-fF8"/>
+                        <outlet property="txtAddr1" destination="IeU-PV-vzX" id="dh2-aZ-a4N"/>
+                        <outlet property="txtAddr2" destination="u7N-wQ-eKd" id="ZtZ-RA-2Gh"/>
+                        <outlet property="txtCapacity" destination="9ju-RT-EWQ" id="dRT-cv-sFY"/>
+                        <outlet property="txtCity" destination="HCO-mW-4yU" id="dDj-Jv-FgP"/>
+                        <outlet property="txtClassTitle" destination="htH-tg-S61" id="v38-M0-ZT1"/>
+                        <outlet property="txtDuration" destination="1UI-LH-1t7" id="wEr-mW-C0I"/>
+                        <outlet property="txtPrice" destination="kZq-Ga-w9t" id="fDE-ib-os0"/>
+                        <outlet property="txtState" destination="uNl-vA-eDA" id="Nf2-HY-y97"/>
+                        <outlet property="txtZip" destination="hx3-xW-4GU" id="dUx-bK-MwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4J-Ar-dIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,20 +447,20 @@ and cancel if needed</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idx-qv-FOz">
-                                <rect key="frame" x="266" y="208.66666666666666" width="86" height="81.999999999999972"/>
+                                <rect key="frame" x="309" y="229" width="43" height="41"/>
                                 <state key="normal" image="searchBtn"/>
                                 <connections>
                                     <segue destination="uwq-Od-CgE" kind="showDetail" id="SD5-Cd-Wu2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-wk-usQ">
-                                <rect key="frame" x="25" y="337" width="236" height="37.333333333333314"/>
+                                <rect key="frame" x="25" y="337" width="236" height="38.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="32"/>
                                 <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S3Q-VX-8g6">
-                                <rect key="frame" x="25" y="399.33333333333326" width="389" height="330"/>
+                                <rect key="frame" x="25" y="400.66666666666674" width="389" height="330"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="07y-Jd-IsL"/>
@@ -420,47 +473,47 @@ and cancel if needed</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fitnessClassCell" id="j1u-mW-6Tv" customClass="FitnessClassCollectionViewCell" customModule="AnywhereFitness" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-165" width="620" height="660"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5n6-3H-8ML">
-                                            <rect key="frame" x="0.0" y="0.0" width="620" height="660"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="uTI-Nd-z3l">
-                                                    <rect key="frame" x="0.0" y="0.0" width="620" height="660"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="330"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oDy-Qb-mRs">
-                                                    <rect key="frame" x="25" y="160" width="560" height="475"/>
+                                                    <rect key="frame" x="25" y="160" width="250" height="145"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-PU-WKj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="21.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                             <color key="textColor" red="0.33725490196078434" green="0.50196078431372548" blue="0.9137254901960784" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-Y8-tzN">
-                                                            <rect key="frame" x="0.0" y="29" width="560" height="65.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="29.666666666666657" width="250" height="68"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gre-F5-eHP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="16.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-Q5-E47">
-                                                                    <rect key="frame" x="0.0" y="16.333333333333343" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="17" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQj-Fl-x24">
-                                                                    <rect key="frame" x="0.0" y="32.666666666666657" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="34" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfe-LJ-gap">
-                                                                    <rect key="frame" x="0.0" y="49" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="51" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -468,7 +521,7 @@ and cancel if needed</string>
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK2-q8-SJJ">
-                                                            <rect key="frame" x="0.0" y="102.33333333333329" width="560" height="372.66666666666674"/>
+                                                            <rect key="frame" x="0.0" y="105.66666666666669" width="250" height="39.333333333333343"/>
                                                             <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="10"/>
                                                             <state key="normal" title="SIGN UP &gt;&gt;&gt;">
                                                                 <color key="titleColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -483,7 +536,7 @@ and cancel if needed</string>
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-dw-w2w">
-                                                    <rect key="frame" x="10" y="20" width="590" height="110"/>
+                                                    <rect key="frame" x="10" y="20" width="280" height="110"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                 </imageView>
                                             </subviews>
@@ -519,13 +572,13 @@ and cancel if needed</string>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZ4-rB-119">
-                                <rect key="frame" x="115.66666666666667" y="54" width="182.66666666666663" height="32.666666666666657"/>
+                                <rect key="frame" x="116.66666666666667" y="54" width="180.66666666666663" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRb-hG-5Y3">
-                                <rect key="frame" x="93.666666666666686" y="101.66666666666667" width="227" height="42.000000000000014"/>
+                                <rect key="frame" x="97.333333333333329" y="102.66666666666667" width="219.66666666666669" height="43.333333333333329"/>
                                 <string key="text">How would you like to get
 active today? Search below.</string>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
@@ -592,26 +645,26 @@ active today? Search below.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-DU-imX">
-                                <rect key="frame" x="112.66666666666667" y="21.666666666666668" width="188.66666666666663" height="37.333333333333329"/>
+                                <rect key="frame" x="118.33333333333333" y="20.333333333333332" width="177.33333333333337" height="38.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="32"/>
                                 <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osV-aK-0sr">
-                                <rect key="frame" x="266" y="95.666666666666686" width="86" height="82"/>
+                                <rect key="frame" x="309" y="116" width="43" height="41"/>
                                 <state key="normal" image="searchBtn"/>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="uwq-Od-CgE" eventType="touchUpInside" id="d7e-a4-2k9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJT-Kc-vHd">
-                                <rect key="frame" x="47" y="209" width="148.33333333333334" height="37.333333333333343"/>
+                                <rect key="frame" x="47" y="209" width="135" height="38.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="32"/>
                                 <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zCs-iY-o8b">
-                                <rect key="frame" x="47" y="271.33333333333331" width="367" height="329.99999999999994"/>
+                                <rect key="frame" x="47" y="272.66666666666669" width="367" height="330.00000000000006"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="3Jh-oM-nfb"/>
@@ -624,47 +677,47 @@ active today? Search below.</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="classSearchCell" id="6jH-28-f3a" customClass="SearchCollectionViewCell" customModule="AnywhereFitness" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-165" width="620" height="660"/>
+                                        <rect key="frame" x="0.0" y="-2.3333333333333335" width="310" height="334.66666666666669"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zlt-gG-HCB">
-                                            <rect key="frame" x="0.0" y="0.0" width="620" height="660"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="334.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="4We-vN-SX9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="620" height="660"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="334.66666666666669"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y6K-KP-gRg">
-                                                    <rect key="frame" x="25" y="508.66666666666669" width="560" height="126.33333333333331"/>
+                                                    <rect key="frame" x="25" y="180" width="250" height="129.66666666666663"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76Q-2h-GAB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="21.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                             <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-TH-Jr6">
-                                                            <rect key="frame" x="0.0" y="28.999999999999943" width="560" height="65.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="29.666666666666657" width="250" height="68"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MX-bk-LjZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="16.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYo-jH-Lt8">
-                                                                    <rect key="frame" x="0.0" y="16.333333333333371" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="17" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbL-Kg-CtX">
-                                                                    <rect key="frame" x="0.0" y="32.666666666666742" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="34" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evU-BE-HD0">
-                                                                    <rect key="frame" x="0.0" y="49" width="560" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="51.000000000000028" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Lato-MediumItalic" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -672,7 +725,7 @@ active today? Search below.</string>
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX5-Fg-fiP">
-                                                            <rect key="frame" x="0.0" y="102.33333333333331" width="560" height="24"/>
+                                                            <rect key="frame" x="0.0" y="105.66666666666669" width="250" height="24"/>
                                                             <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="10"/>
                                                             <state key="normal" title="SIGN UP &gt;&gt;&gt;">
                                                                 <color key="titleColor" red="0.33725490200000002" green="0.50196078430000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -687,7 +740,7 @@ active today? Search below.</string>
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RyS-TA-m6d">
-                                                    <rect key="frame" x="10" y="20" width="590" height="328.66666666666669"/>
+                                                    <rect key="frame" x="10" y="20" width="280" height="0.0"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                 </imageView>
                                             </subviews>
