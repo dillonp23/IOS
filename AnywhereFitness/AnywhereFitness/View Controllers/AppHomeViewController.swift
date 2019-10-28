@@ -49,6 +49,7 @@ class AppHomeViewController: UIViewController {
         FitClassController.shared.fetchClassesFromServer { (_) in
             DispatchQueue.main.async {
                 self.updateViews()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -100,4 +101,11 @@ extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     
+}
+
+extension AppHomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return false
+    }
 }
