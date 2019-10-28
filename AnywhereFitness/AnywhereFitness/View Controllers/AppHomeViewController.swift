@@ -64,7 +64,7 @@ class AppHomeViewController: UIViewController {
         guard let searchVC = segue.destination as? SearchViewController else { return }
         if let searchString = searchTextField.text, !searchString.isEmpty {
             searchVC.searchTerm = searchString
-//            searchVC.fitClassController = fitClassController
+            searchVC.fitClassController = fitClassController
         }
     }
     
