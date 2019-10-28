@@ -121,14 +121,34 @@ class FitClassController {
         guard let i = fitClassRepresentations.firstIndex(where: { $0.classID == rep.classID }) else { return }
         fitClassRepresentations[i] = rep
     }
-    
-    
+        
     // MARK: - Create/Update/Register/Cancel
     
-    func createFitClass() {}
+    func createOrUpdateFitClass(with representation: FitClassRepresentation, completion: @escaping (Bool) -> Void) {
+        let requestURL = baseURL.appendingPathComponent("classes").appendingPathComponent(representation.classID).appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "PUT"
+        
+        let encoder = JSONEncoder()
+        do {
+            request.httpBody = try encoder.encode(representation)
+        } catch {
+            print("Error encoding new or updated class: \(error)")
+            completion(false)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print("Error saving new/updated class: \(error)")
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
     
-    func updateFitClass() {}
-    
+   
     func registerForClass(representation: FitClassRepresentation, completion: @escaping (Bool) -> Void) {
         guard let user = UserController.shared.loggedInUser, let uid = user.uid
         else {
