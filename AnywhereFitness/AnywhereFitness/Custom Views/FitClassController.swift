@@ -26,11 +26,6 @@ class FitClassController {
         return classRepsFor(metro: metro)
     }
     
-//    func searchClasses(completion: @escaping (Error?) -> Void = { _ in }) {
-//        
-//        
-//    }
-    
     
     func fetchClassesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
         

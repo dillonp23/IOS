@@ -65,6 +65,8 @@ class AppHomeViewController: UIViewController {
         if let searchString = searchTextField.text, !searchString.isEmpty {
             searchVC.searchTerm = searchString
             searchVC.fitClassController = fitClassController
+        } else {
+            searchVC.fitClassController = fitClassController
         }
     }
     

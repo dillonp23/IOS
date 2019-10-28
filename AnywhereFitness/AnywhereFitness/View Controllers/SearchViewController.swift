@@ -50,6 +50,7 @@ class SearchViewController: UIViewController {
     func getResults() {
         if let searchTerm = searchClassesTextField.text, !searchTerm.isEmpty {
             guard let metro = UserController.shared.loggedInUser?.metro, let fitClassController = fitClassController else { return }
+            searchResults.removeAll()
             searchResults = fitClassController.classRepsFor(category: searchTerm, metro: metro)
             
             DispatchQueue.main.async {
@@ -58,12 +59,11 @@ class SearchViewController: UIViewController {
             
         } else {
             guard let fitClassController = fitClassController else { return }
+            searchResults.removeAll()
+            searchResults = fitClassController.fitClassRepresentations
             
-            fitClassController.fetchClassesFromServer { (_) in
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
     }
@@ -72,15 +72,13 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let fitClassController = fitClassController else { return 0 }
-            return fitClassController.fitClassRepresentations.count
+        return searchResults.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let fitClassController = fitClassController else { return UICollectionViewCell() }
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "classSearchCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
             
-            let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
+            let fitClass = searchResults[indexPath.item]
             
             cell.titleLabel.text = fitClass.title
             cell.categoryLabel.text = "Class Type: \(fitClass.category)"
