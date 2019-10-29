@@ -16,6 +16,8 @@ class AppHomeViewController: UIViewController {
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    var fitClassRepsForUserMetro: [FitClassRepresentation] = []
+    
     
     private func checkLoggedInUserStatus() {
         //checking for current user
@@ -37,6 +39,12 @@ class AppHomeViewController: UIViewController {
         super.viewDidLoad()
         checkLoggedInUserStatus()
         FitClassController.shared.fetchClassesFromServer { (_) in
+            
+            if let user = UserController.shared.loggedInUser, let metro = user.metro {
+                let fitClass = FitClassController.shared
+                self.fitClassRepsForUserMetro = fitClass.classRepsFor(metro: metro)
+            }
+            
             DispatchQueue.main.async {
                 self.updateViews()
                 self.collectionView.reloadData()
@@ -47,6 +55,12 @@ class AppHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         FitClassController.shared.fetchClassesFromServer { (_) in
+            
+            if let user = UserController.shared.loggedInUser, let metro = user.metro {
+                let fitClass = FitClassController.shared
+                self.fitClassRepsForUserMetro = fitClass.classRepsFor(metro: metro)
+            }
+            
             DispatchQueue.main.async {
                 self.updateViews()
                 self.collectionView.reloadData()
@@ -84,14 +98,14 @@ class AppHomeViewController: UIViewController {
 extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return fitClassController.fitClassRepresentations.count
-        return FitClassController.shared.fitClassRepsForUserMetro.count
+        return fitClassRepsForUserMetro.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fitnessClassCell", for: indexPath) as? FitnessClassCollectionViewCell else { return UICollectionViewCell() }
         
 //        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
-        let fitClass = FitClassController.shared.fitClassRepsForUserMetro[indexPath.item]
+        let fitClass = fitClassRepsForUserMetro[indexPath.item]
         
         cell.fitClassController = FitClassController.shared
         cell.fitClass = fitClass
@@ -101,11 +115,4 @@ extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     
-}
-
-extension AppHomeViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.resignFirstResponder()
-        return false
-    }
 }

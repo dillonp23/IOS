@@ -60,10 +60,15 @@ class AddClassViewController: UIViewController {
         
         fitClassController.createOrUpdateFitClass(with: fitClass) { created in
             if created {
-                self.dismiss(animated: true, completion: nil)
+                
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             } else {
-                let alert = UIAlertController(title: "Error", message: "We're sorry, an error occurred and we weren't able to save your class. Please try again.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "We're sorry, an error occurred and we weren't able to save your class. Please try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                }
             }
         }
     }
