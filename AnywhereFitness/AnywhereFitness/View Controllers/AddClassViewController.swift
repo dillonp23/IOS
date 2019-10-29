@@ -68,6 +68,7 @@ class AddClassViewController: UIViewController {
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Error", message: "We're sorry, an error occurred and we weren't able to save your class. Please try again.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
@@ -84,7 +85,7 @@ extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 1 {
+        if component == 0 {
 //            return categoryController.allCategories.count
             return categories.count
         } else {
