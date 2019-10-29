@@ -19,6 +19,7 @@ class YourClassesViewController: UIViewController {
     
     
     var registeredClasses: [FitClassRepresentation] = []
+    var hostedClasses: [FitClassRepresentation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class YourClassesViewController: UIViewController {
     
     @IBAction func toggleUserType(_ sender: UISwitch) {
         setUpViewForUserType()
+        getClasses()
     }
     
     
@@ -69,55 +71,108 @@ class YourClassesViewController: UIViewController {
     
     func getClasses() {
         let fitClassController = FitClassController.shared
-        fitClassController.fetchClassesFromServer { (_) in
+        
+        if userTypeSwitch.isOn == false {
+            fitClassController.fetchClassesFromServer { (_) in
+                
+                guard let user = UserController.shared.loggedInUser else { return }
+                self.registeredClasses = []
+                self.registeredClasses = fitClassController.classRepsFor(client: user)
+                
+                DispatchQueue.main.async {
+                    self.updateViews()
+                    self.collectionView.reloadData()
+                }
+            }
+        } else {
             
-            guard let user = UserController.shared.loggedInUser else { return }
-            self.registeredClasses = []
-            self.registeredClasses = fitClassController.classRepsFor(client: user)
-            
-            DispatchQueue.main.async {
-                self.updateViews()
-                self.collectionView.reloadData()
+            fitClassController.fetchClassesFromServer { (_) in
+                
+                guard let user = UserController.shared.loggedInUser else { return }
+                self.hostedClasses = []
+                self.hostedClasses = fitClassController.classRepsFor(instructor: user)
+                
+                DispatchQueue.main.async {
+                    self.updateViews()
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
     
     func updateViews() {
-        let numberOfClasses = registeredClasses.count
-        numberOfClassesLabel.text = "You currently have \(numberOfClasses) reservation(s)"
+        if userTypeSwitch.isOn == false {
+            let numberOfClasses = registeredClasses.count
+            numberOfClassesLabel.text = "You currently have \(numberOfClasses) reservation(s)"
+        } else {
+            let numberOfClasses = hostedClasses.count
+            numberOfClassesLabel.text = "You'll be hosting \(numberOfClasses) class(es)"
+        }
+        
     }
-
+    
 }
 
 extension YourClassesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return registeredClasses.count
+        var numberOfItems = 0
+        if userTypeSwitch.isOn == false {
+            numberOfItems = registeredClasses.count
+        } else {
+            numberOfItems = hostedClasses.count
+        }
+        return numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YourClassesCell", for: indexPath) as? YourClassesCollectionViewCell else { return UICollectionViewCell() }
         
-        let fitClass = registeredClasses[indexPath.item]
-        
-        cell.titleLabel.text = fitClass.title
-        cell.categoryLabel.text = "Class Type: \(fitClass.category)"
-        cell.intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
-        cell.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, @ h a"
-        if let timeSince1970 = Double(fitClass.startTime) {
-            let date = Date(timeIntervalSince1970: timeSince1970)
-            cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
+        if userTypeSwitch.isOn == false {
+            let fitClass = registeredClasses[indexPath.item]
+            
+            cell.titleLabel.text = fitClass.title
+            cell.categoryLabel.text = "Class Type: \(fitClass.category)"
+            cell.intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
+            cell.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, @ h a"
+            if let timeSince1970 = Double(fitClass.startTime) {
+                let date = Date(timeIntervalSince1970: timeSince1970)
+                cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
+            }
+            
+            cell.fitClass = fitClass
+            cell.delegate = self
+            cell.fitClassController = FitClassController.shared
+            
+            cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
+        } else {
+            let fitClass = hostedClasses[indexPath.item]
+            
+            cell.titleLabel.text = fitClass.title
+            cell.categoryLabel.text = "Class Type: \(fitClass.category)"
+            cell.intensityLabel.text = "Intensity Level: \(fitClass.intensity.capitalized)"
+            cell.locationLabel.text = "\(fitClass.city), \(fitClass.state)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, @ h a"
+            if let timeSince1970 = Double(fitClass.startTime) {
+                let date = Date(timeIntervalSince1970: timeSince1970)
+                cell.timeAndDurationLabel.text = dateFormatter.string(from: date) + " for \(fitClass.duration) minutes"
+            }
+            
+            cell.fitClass = fitClass
+            cell.delegate = self
+            cell.fitClassController = FitClassController.shared
+            
+            cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
         }
         
-        cell.fitClass = fitClass
-        cell.delegate = self
-        cell.fitClassController = FitClassController.shared
-        
-        cell.fitnessCategoryImage.image = UIImage(named: fitClass.category)
-        
         return cell
+        
+        
     }
     
     
