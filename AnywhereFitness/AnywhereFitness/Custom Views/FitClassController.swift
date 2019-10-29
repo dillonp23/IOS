@@ -114,6 +114,22 @@ class FitClassController {
         }
     }
     
+    func classRepsFor(instructor: User) -> [FitClassRepresentation] {
+       guard let uid = instructor.uid else { return [] }
+        
+        return fitClassRepresentations.filter { (rep) -> Bool in
+            guard let timestamp = Double(rep.startTime) else { return false }
+            let host = rep.instructor
+            
+            if host == uid {
+                if Date(timeIntervalSinceReferenceDate: timestamp) > Date() {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    
     func updateRepresentation(with rep: FitClassRepresentation) {
         guard let i = fitClassRepresentations.firstIndex(where: { $0.classID == rep.classID }) else { return }
         fitClassRepresentations[i] = rep
@@ -142,7 +158,7 @@ class FitClassController {
                 return
             }
             completion(true)
-        }
+        }.resume()
     }
     
    
