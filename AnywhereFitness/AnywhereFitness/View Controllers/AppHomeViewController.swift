@@ -37,6 +37,9 @@ class AppHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTextField.delegate = self
+        
         checkLoggedInUserStatus()
         FitClassController.shared.fetchClassesFromServer { (_) in
             
@@ -115,4 +118,11 @@ extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     
+}
+
+extension AppHomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

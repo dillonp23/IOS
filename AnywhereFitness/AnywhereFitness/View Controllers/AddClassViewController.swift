@@ -34,6 +34,16 @@ class AddClassViewController: UIViewController {
         
         pkrCategoryIntensity.delegate = self
         pkrCategoryIntensity.dataSource = self
+        
+        txtClassTitle.delegate = self
+        txtDuration.delegate = self
+        txtAddr1.delegate = self
+        txtAddr2.delegate = self
+        txtCity.delegate = self
+        txtState.delegate = self
+        txtZip.delegate = self
+        txtPrice.delegate = self
+        txtCapacity.delegate = self
     }
     
     @IBAction func saveTapped(_ sender: Any) {
@@ -126,5 +136,12 @@ extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             }
             self.intensity = intensity
         }
+    }
+}
+
+extension AddClassViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

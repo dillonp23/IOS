@@ -23,6 +23,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         getResults()
+        
+        searchClassesTextField.delegate = self
     }
     
     
@@ -104,4 +106,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

@@ -31,6 +31,12 @@ class UserAuthViewController: UIViewController {
         if let registerImage = UIImage(named: "registerBtn") {
             btnSignUpIn.setBackgroundImage(registerImage, for: .normal)
         }
+        
+        txtEmail.delegate = self
+        txtPassword.delegate = self
+        txtConfirmPassword.delegate = self
+        txtFirstName.delegate = self
+        txtLastName.delegate = self
     }
     
     
@@ -146,8 +152,8 @@ extension UserAuthViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 }
 
 extension UserAuthViewController: UITextFieldDelegate {
-    // TODO: - Add UITextFieldDelegate Methods
-    // need to add methods to verify password, decide when to enable
-    // the Sign Up/In button, deal with the keyboard, etc.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
-
