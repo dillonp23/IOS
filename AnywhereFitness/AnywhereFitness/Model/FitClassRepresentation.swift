@@ -46,4 +46,25 @@ struct FitClassRepresentation: Codable {
         registrants = fitClass.registrants
         offerPunchcard = fitClass.offerPunchcard
     }
+    
+    init(classID: String, instructor: String, startTime: String, duration: Int, title: String, category: String, intensity: String, metro: String, addr1: String, addr2: String? = nil, city: String, state: String, zip: String, price: Double, maxRegistrants: Int? = nil, registrants: [String]? = nil, offerPunchcard: Bool = false) {
+        
+        self.classID = classID
+        self.instructor = instructor
+        self.startTime = startTime
+        self.duration = duration
+        self.title = title
+        self.category = category
+        self.intensity = intensity
+        self.metro = metro
+        self.addr1 = addr1
+        self.addr2 = addr2
+        self.city = city
+        self.state = state
+        self.zip = zip
+        self.price = price
+        self.maxRegistrants = maxRegistrants
+        self.registrants = registrants
+        self.offerPunchcard = offerPunchcard
+    }
 }
