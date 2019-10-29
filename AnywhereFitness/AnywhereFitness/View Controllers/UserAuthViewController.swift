@@ -27,13 +27,13 @@ class UserAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let registerImage = UIImage(named: "registerBtn") {
             btnSignUpIn.setBackgroundImage(registerImage, for: .normal)
         }
     }
     
-
+    
     private func updateViews() {
         if segSignUpIn.selectedSegmentIndex == 0 { // Sign Up
             stackSignUp.isHidden = false
@@ -60,7 +60,7 @@ class UserAuthViewController: UIViewController {
                 let confirm = txtConfirmPassword.text, !confirm.isEmpty,
                 let firstName = txtFirstName.text, !firstName.isEmpty,
                 let lastName = txtLastName.text, !lastName.isEmpty
-            else {
+                else {
                     // should never get here bc button should be disabled
                     return
             }
@@ -68,7 +68,7 @@ class UserAuthViewController: UIViewController {
                 print("A message about password mismatch should go here")
                 return
             }
-
+            
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 if let error = error {
                     print("error creating user in Firebase: \(error)")
@@ -88,15 +88,15 @@ class UserAuthViewController: UIViewController {
                     let vc = storyboard.instantiateViewController(withIdentifier: "Onboarding1")
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-                    }
                 }
-
+            }
+            
         } else {    // Sign In
             guard let email = txtEmail.text, !email.isEmpty, let password = txtPassword.text, !password.isEmpty else {
                 // should never get here bc button should be disabled
                 return
             }
-
+            
             Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
                 if let error = error {
                     print("Error signing into Firebase: \(error)")

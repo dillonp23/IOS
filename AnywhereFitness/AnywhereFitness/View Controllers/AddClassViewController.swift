@@ -9,7 +9,7 @@
 import UIKit
 
 class AddClassViewController: UIViewController {
-
+    
     @IBOutlet weak var txtClassTitle: UITextField!
     @IBOutlet weak var pkrStartTime: UIDatePicker!
     @IBOutlet weak var txtDuration: UITextField!
@@ -23,7 +23,7 @@ class AddClassViewController: UIViewController {
     @IBOutlet weak var txtCapacity: UITextField!
     
     var fitClassController = FitClassController.shared
-//    var categoryController = CategoryController()
+    //    var categoryController = CategoryController()
     var categories = ["Cardio", "CrossFit", "HIIT", "Pilates", "Yoga"]
     var startTime: String?
     var category = ""
@@ -48,14 +48,14 @@ class AddClassViewController: UIViewController {
             let state = txtState.text, !state.isEmpty,
             let zip = txtZip.text, !zip.isEmpty,
             let price = Double(txtPrice.text ?? "-1"), price > 0
-        else { return }
+            else { return }
         
         let addr2 = txtAddr2.text
         var capacity: Int?
         if let capacityString = txtCapacity.text {
             capacity = Int(capacityString)
         }
-                
+        
         let fitClass = FitClassRepresentation(classID: UUID().uuidString, instructor: uid, startTime: startTime, duration: duration, title: title, category: category, intensity: intensity, metro: metro, addr1: addr1, addr2: addr2, city: city, state: state, zip: zip, price: price, maxRegistrants: capacity)
         
         fitClassController.createOrUpdateFitClass(with: fitClass) { created in
@@ -86,7 +86,7 @@ extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-//            return categoryController.allCategories.count
+            //            return categoryController.allCategories.count
             return categories.count
         } else {
             return 3
@@ -95,7 +95,7 @@ extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-//            return categoryController.allCategoriesAsStrings[row]
+            //            return categoryController.allCategoriesAsStrings[row]
             return categories[row]
         }
         var intensity: String
@@ -112,7 +112,7 @@ extension AddClassViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
-//            category = categoryController.allCategoriesAsStrings[row]
+            //            category = categoryController.allCategoriesAsStrings[row]
             category = categories[row]
         } else {
             var intensity: String

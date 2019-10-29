@@ -34,7 +34,7 @@ class AppHomeViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLoggedInUserStatus()
@@ -68,10 +68,10 @@ class AppHomeViewController: UIViewController {
         }
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -92,19 +92,19 @@ class AppHomeViewController: UIViewController {
             greetingLabel.text = "Welcome"
         }
     }
-
+    
 }
 
 extension AppHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return fitClassController.fitClassRepresentations.count
+        //        return fitClassController.fitClassRepresentations.count
         return fitClassRepsForUserMetro.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fitnessClassCell", for: indexPath) as? FitnessClassCollectionViewCell else { return UICollectionViewCell() }
         
-//        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
+        //        let fitClass = fitClassController.fitClassRepresentations[indexPath.item]
         let fitClass = fitClassRepsForUserMetro[indexPath.item]
         
         cell.fitClassController = FitClassController.shared

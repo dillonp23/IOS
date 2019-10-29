@@ -27,7 +27,7 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
             let user = UserController.shared.loggedInUser,
             let uid = user.uid,
             registeredClients.contains(uid)
-        else { return false }
+            else { return false }
         
         return true
     }
@@ -36,7 +36,7 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
     @IBAction func signUpButtonTapped(_ sender: Any) {
         guard let fitClassController = fitClassController, let fitClass = fitClass,
             let delegate = delegate
-        else { return }
+            else { return }
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
@@ -46,7 +46,7 @@ class FitnessClassCollectionViewCell: UICollectionViewCell {
                 if cancelled {
                     guard let uid = UserController.shared.loggedInUser?.uid,
                         let i = fitClass.registrants?.firstIndex(of: uid)
-                    else { return }
+                        else { return }
                     DispatchQueue.main.async {
                         self.fitClass?.registrants?.remove(at: i)
                         alert.title = "Registration cancelled"

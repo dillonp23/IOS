@@ -13,12 +13,12 @@ class RegListViewController: UIViewController {
     @IBOutlet weak var lblDateAndTime: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-//    var fitClassController: FitClassController?
+    //    var fitClassController: FitClassController?
     var fitClass: FitClassRepresentation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         updateViews()
@@ -45,7 +45,7 @@ extension RegListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let fitClass = fitClass,
             let cell = tableView.dequeueReusableCell(withIdentifier: "registrantCell")
-        else { return UITableViewCell() }
+            else { return UITableViewCell() }
         
         cell.textLabel?.text = fitClass.registrants?[indexPath.row]
         return cell

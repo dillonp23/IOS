@@ -13,7 +13,7 @@ import Firebase
 // *** THIS FILE IS NOT CURRENTLY IN USE ***
 
 class LaunchScreenViewController: UIViewController {
-
+    
     private func checkLoggedInUserStatus() {
         //checking for current user
         //if no current user present welcome navigation controlller
@@ -25,14 +25,14 @@ class LaunchScreenViewController: UIViewController {
             }
         }
     }
-//        } else {
-//            DispatchQueue.main.async {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
-//            self.present(vc, animated: false, completion: nil)
-//        }
-//    }
-
+    //        } else {
+    //            DispatchQueue.main.async {
+    //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //            let vc = storyboard.instantiateViewController(withIdentifier: "AppHomeStoryboard")
+    //            self.present(vc, animated: false, completion: nil)
+    //        }
+    //    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +47,5 @@ class LaunchScreenViewController: UIViewController {
         // after delay shows home
         performSegue(withIdentifier: "showHomePageSegue", sender: self)
     }
-
+    
 }
