@@ -113,7 +113,7 @@ class CategoryController {
                 for cat in categoryDictionary {
                     self.allCategories.append(cat.value)
                 }
-                completion(nil)
+//                completion(nil)
             } catch {
                 print("Error decoding categories: \(error)")
                 completion(error)
